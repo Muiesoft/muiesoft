@@ -8,6 +8,17 @@ export type ChangelogEntry = {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: "v0.4.1",
+    date: "2026-08-10",
+    added: [
+      "Repo GitHub recreat curat (un singur contributor: Muiesoft) cu probe și CI pe main",
+    ],
+    removed: [],
+    changed: [
+      "Workers Builds reatașat la repo-ul nou; deploy pe push rămâne sursa de adevăr pentru live",
+    ],
+  },
+  {
     version: "v0.4.0",
     date: "2026-08-10",
     added: [
