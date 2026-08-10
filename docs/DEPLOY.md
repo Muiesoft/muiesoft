@@ -11,6 +11,17 @@ Domeniu țintă: `muiesoft.ro`
 - [`open-next.config.ts`](../open-next.config.ts)
 - Scripts: `build:cf`, `preview:cf`, `deploy:cf`, `upload:cf`
 
+## Workers Builds după recreate repo
+
+Dacă repo-ul GitHub a fost recreat (ID nou, același nume), leagă din nou sursa în Cloudflare:
+
+1. Workers / Builds → proiectul `muiesoft-v1`
+2. Re-selectează GitHub → `Muiesoft/muiesoft` (re-authorize GitHub App dacă cere)
+3. Branch `main`, build/deploy ca mai jos
+4. Trigger deploy manual o dată
+
+Worker-ul și domeniul rămân; se rup doar webhook-ul/source-ul Git.
+
 ## Workers Builds (dashboard Cloudflare)
 
 Setări recomandate:
