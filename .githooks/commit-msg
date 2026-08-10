@@ -1,0 +1,5 @@
+#!/bin/sh
+msg_file="$1"
+tmp="$(mktemp)"
+grep -v -E '^(Co-authored-by:|Made-with:)' "$msg_file" > "$tmp" || true
+mv "$tmp" "$msg_file"

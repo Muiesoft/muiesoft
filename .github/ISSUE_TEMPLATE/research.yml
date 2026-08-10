@@ -1,0 +1,30 @@
+name: Research
+description: Incident documentat, investigație, metodologie
+title: "[research] "
+labels: ["research"]
+body:
+  - type: textarea
+    id: claim
+    attributes:
+      label: Ce ai găsit
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Pași de reproducere / metodă
+  - type: textarea
+    id: sources
+    attributes:
+      label: Surse / capturi / linkuri
+    validations:
+      required: true
+  - type: checkboxes
+    id: ethics
+    attributes:
+      label: Guardrails
+      options:
+        - label: Nu am testat vulnerabilități fără permisiune
+          required: true
+        - label: Nu public date personale inutile
+          required: true

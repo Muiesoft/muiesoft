@@ -1,0 +1,19 @@
+name: Date
+description: Registry, surse, provenance, open data
+title: "[date] "
+labels: ["date"]
+body:
+  - type: textarea
+    id: dataset
+    attributes:
+      label: Ce date / ce sursă
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: URL sursă oficială
+  - type: textarea
+    id: license
+    attributes:
+      label: Licență / termeni de folosire (dacă știi)

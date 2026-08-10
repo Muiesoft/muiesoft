@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Muiesoft">
+  <rect width="64" height="64" fill="#050505"/>
+  <path
+    fill="#c6ff00"
+    fill-rule="evenodd"
+    d="
+      M10 44
+      V16
+      L22 32
+      L32 16
+      L42 32
+      L54 16
+      V44
+      H46
+      V28
+      L36 42
+      H28
+      L18 28
+      V44
+      Z
+    "
+  />
+  <g
+    font-family="IBM Plex Mono, ui-monospace, monospace"
+    font-size="13"
+    font-weight="700"
+    text-anchor="middle"
+  >
+    <text x="22" y="58" fill="#f5f3ec">&lt;</text>
+    <text x="32" y="58" fill="#c6ff00">/</text>
+    <text x="42" y="58" fill="#f5f3ec">&gt;</text>
+  </g>
+</svg>

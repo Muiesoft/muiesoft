@@ -1,0 +1,21 @@
+name: UX
+description: Problema de utilizare, accesibilitate, copy
+title: "[ux] "
+labels: ["ux"]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Unde (pagină / flow)
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Ce e greu / greșit
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Cum ar trebui să fie

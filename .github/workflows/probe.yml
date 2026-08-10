@@ -1,0 +1,73 @@
+name: Probe
+
+on:
+  schedule:
+    - cron: "17 4 * * *"
+    - cron: "37 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    if: github.repository == 'Muiesoft/muiesoft'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.MUIE_PUSH_TOKEN }}
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          package-manager-cache: false
+
+      - run: node scripts/probe.mjs
+
+      - name: Commit probe snapshot
+        env:
+          MUIE_PUSH_TOKEN: ${{ secrets.MUIE_PUSH_TOKEN }}
+        run: |
+          git config user.name "Muiesoft"
+          git config user.email "muiesoft@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${MUIE_PUSH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git add src/data/registry/probes.json
+          git diff --cached --quiet || git commit -m "probe: snapshot zilnic"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+  lighthouse:
+    if: github.repository == 'Muiesoft/muiesoft' && (github.event_name == 'workflow_dispatch' || github.event.schedule == '37 5 * * 1')
+    needs: probe
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          token: ${{ secrets.MUIE_PUSH_TOKEN }}
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          package-manager-cache: false
+
+      - run: node scripts/lighthouse.mjs
+
+      - name: Commit lighthouse snapshots
+        env:
+          MUIE_PUSH_TOKEN: ${{ secrets.MUIE_PUSH_TOKEN }}
+        run: |
+          git config user.name "Muiesoft"
+          git config user.email "muiesoft@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${MUIE_PUSH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git add src/data/registry/lighthouse-snapshots.json
+          git diff --cached --quiet || git commit -m "lighthouse: snapshot-uri săptămânale"
+          git pull --rebase origin main
+          git push origin HEAD:main

@@ -1,0 +1,25 @@
+name: Drept
+description: Clarificări juridice, MuieLex, proceduri — cu surse
+title: "[drept] "
+labels: ["drept"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Întrebarea / problema
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Surse oficiale (obligatoriu pentru claim-uri)
+      description: Fără surse nu publicăm afirmații ca fapte.
+    validations:
+      required: true
+  - type: checkboxes
+    id: not-advice
+    attributes:
+      label: Confirm
+      options:
+        - label: Nu cer consultanță juridică personală; propun documentare cu surse
+          required: true

@@ -1,0 +1,176 @@
+openapi: 3.1.0
+info:
+  title: romania.api (Muiesoft)
+  version: 0.2.0-preview
+  description: >
+    Preview public read-only, servit din registry-ul Muiesoft.
+    Orice resursă numerică sau juridică include provenance (sources).
+    Răspunsurile au envelope { meta, data }. Fără auth, fără SLA încă.
+  contact:
+    email: contact@muiesoft.ro
+servers:
+  - url: https://muiesoft.ro/api/v1
+    description: Preview (live)
+  - url: https://api.muiesoft.ro/v1
+    description: Planned (subdomeniu dedicat, ulterior)
+paths:
+  /:
+    get:
+      summary: List available endpoints
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Envelope"
+  /laws:
+    get:
+      summary: List legal documents (registry)
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Envelope"
+  /services:
+    get:
+      summary: List public portals with labeled scores
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Envelope"
+  /institutions:
+    get:
+      summary: List institutions for Legea 544 requests
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Envelope"
+  /contracts:
+    get:
+      summary: List sourced public contracts
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Envelope"
+  /procedures:
+    get:
+      summary: List civic procedures
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Envelope"
+  /incidents:
+    get:
+      summary: List documented availability incidents
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Envelope"
+  /probes:
+    get:
+      summary: Latest daily HTTP probe per portal
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Envelope"
+  /lighthouse:
+    get:
+      summary: List one-off Lighthouse snapshots
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Envelope"
+  /changes:
+    get:
+      summary: Muiesoft changelog (legal change feed comes with Phase 2)
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Envelope"
+components:
+  schemas:
+    Envelope:
+      type: object
+      required: [meta, data]
+      properties:
+        meta:
+          type: object
+          required: [endpoint, count, generatedAt, license, note]
+          properties:
+            endpoint: { type: string }
+            count: { type: integer }
+            generatedAt: { type: string, format: date-time }
+            license: { type: string }
+            docs: { type: string, format: uri }
+            note: { type: string }
+        data:
+          type: array
+          items: {}
+    SourceReference:
+      type: object
+      required: [id, title, publisher, url, sourceType]
+      properties:
+        id: { type: string }
+        title: { type: string }
+        publisher: { type: string }
+        url: { type: string, format: uri }
+        retrievedAt: { type: string, format: date-time }
+        sourceType:
+          type: string
+          enum: [official, court, institution, open-data, secondary, demo]
+    Institution:
+      type: object
+      required: [id, slug, name, category, status, sources]
+      properties:
+        id: { type: string }
+        slug: { type: string }
+        name: { type: string }
+        category: { type: string }
+        website: { type: string, format: uri }
+        scoreKind:
+          type: string
+          enum: [opinion-estimate, measured, demo]
+        demo: { type: boolean }
+        sources:
+          type: array
+          items:
+            $ref: "#/components/schemas/SourceReference"
+    LegalDocument:
+      type: object
+      required: [id, slug, title, sources]
+      properties:
+        id: { type: string }
+        slug: { type: string }
+        title: { type: string }
+        demo: { type: boolean }
+        sources:
+          type: array
+          items:
+            $ref: "#/components/schemas/SourceReference"

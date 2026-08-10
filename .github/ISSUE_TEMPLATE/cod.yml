@@ -1,0 +1,19 @@
+name: Cod
+description: Bug, feature sau PR pe cod
+title: "[cod] "
+labels: ["cod"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Ce e în neregulă / ce lipsește
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Propunere / pași
+  - type: input
+    id: files
+    attributes:
+      label: Fișiere relevante (opțional)
