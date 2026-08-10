@@ -1,6 +1,7 @@
 import { siteConfig } from "@/config/site";
 import { changelog } from "@/data/demo/changelog";
 import { editorialCases } from "@/data/editorial/cases";
+import { registryIncidents } from "@/data/registry/incidents";
 
 export const dynamic = "force-static";
 
@@ -44,6 +45,16 @@ export function GET() {
         editorialCase.summary,
       ),
     })),
+    ...registryIncidents.map((incident) => ({
+      date: incident.when,
+      xml: item(
+        incident.title,
+        `${siteConfig.url}/muie-index/incidente/${incident.id}`,
+        `incident-${incident.id}`,
+        incident.when,
+        incident.summary,
+      ),
+    })),
   ]
     .sort((a, b) => b.date.localeCompare(a.date))
     .map((i) => i.xml)
@@ -52,7 +63,7 @@ export function GET() {
   const feed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>${escapeXml(siteConfig.name)} · changelog și ediție</title>
+    <title>${escapeXml(siteConfig.name)} · changelog, ediție și incidente</title>
     <link>${siteConfig.url}</link>
     <atom:link href="${siteConfig.url}/feed.xml" rel="self" type="application/rss+xml"/>
     <description>${escapeXml(siteConfig.description)}</description>

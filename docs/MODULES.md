@@ -6,11 +6,11 @@
 - **Mode:** preview
 - **Repository:** `InstitutionRepository`
 - **Real data needed:** registry servicii, probe uptime/UX/a11y
-- **External deps:** Lighthouse (snapshot-uri one-off în registry), HTTP probes (viitor)
+- **External deps:** Lighthouse (snapshot-uri one-off în registry), HTTP probes zilnice (GitHub Actions → `probes.json`)
 - **Legal:** public measurement, no unauthorized testing
-- **Cost drivers:** monitoring infra continuu (încă nu)
-- **Milestones:** methodology → probes (snapshot Lighthouse pe 3 portaluri) → public scores
-- **Now:** scor catalog = `opinion-estimate`; profilul poate arăta snapshot Lighthouse separat
+- **Cost drivers:** monitoring infra continuu (încă nu; probele zilnice rulează pe GH Actions gratuit)
+- **Milestones:** methodology → probes zilnice + snapshot Lighthouse pe ~31 portaluri → public scores măsurate
+- **Now:** scor catalog = `opinion-estimate`; probe HTTP zilnice publice; Lighthouse pe profiluri; incidente documentate pe `/` și `/muie-index`
 
 ## MuieLex
 

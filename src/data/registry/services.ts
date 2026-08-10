@@ -386,7 +386,7 @@ export const registryServices: Institution[] = [
     physicalRequired: 1,
     pdfCountLabel: "moderate",
     summary:
-      "Cadastru și carte funciară prin e-Terra. În iulie 2026, un ransomware confirmat oficial a scos e-Terra din funcțiune la nivel național; Guvernul raportează baza centrală intactă. Statusul din catalog e degradație de disponibilitate, nu sentință. Vezi incidentul documentat.",
+      "Cadastru și carte funciară prin e-Terra. În iulie 2026, un ransomware confirmat oficial a scos e-Terra din funcțiune la nivel național; Guvernul raportează baza centrală intactă și a estimat (august 2026) o redeschidere etapizată. Până la confirmare publică a uptime-ului, statusul din catalog rămâne degradație. Vezi incidentul documentat.",
     scoreKind: "opinion-estimate",
     scoreNote:
       "Estimare pe baza frustrărilor și așteptărilor comune ale utilizatorilor, actualizată după incidentul ransomware e-Terra din iulie 2026 (surse oficiale pe pagina de incident). NU este măsurătoare Muie Index, NU este studiu statistic, NU este uptime real.",

@@ -53,12 +53,22 @@ function ScoreKindBadge({ kind }: { kind?: string }) {
   return <Badge variant="demo">EXEMPLU</Badge>;
 }
 
+function tabFromSlug(value?: string): Tab {
+  if (!value) return "Clasament";
+  const match = (Object.entries(tabSlugs) as [Tab, string][]).find(
+    ([, slug]) => slug === value,
+  );
+  return match?.[0] ?? "Clasament";
+}
+
 export function MuieIndexClient({
   ranking,
+  initialTab,
 }: {
   ranking: InstitutionRankingEntry[];
+  initialTab?: string;
 }) {
-  const [tab, setTab] = useState<Tab>("Clasament");
+  const [tab, setTab] = useState<Tab>(() => tabFromSlug(initialTab));
 
   return (
     <div className="px-4 py-10 md:px-8">

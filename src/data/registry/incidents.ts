@@ -24,12 +24,12 @@ export const registryIncidents: IncidentRecord[] = [
       "Citește comunicatul Guvernului din 27 iulie 2026 despre accesul neautorizat constatat de ANCPI pe 14 iulie și confirmarea atacului ransomware.",
       "Notează sistemele raportate ca afectate: e-Terra (cadastru și carte funciară), ePay, email instituțional; infrastructură de virtualizare criptată/ștearsă parțial.",
       "Citește precizarea oficială: baza de date centrală a evidenței proprietăților e raportată intactă; nu există dovezi de acces la aceste date.",
-      "Citește analiza de impact juridic (blocaj extrase CF / autentificări notariale) din sursa Juridice de mai jos. Nu rula teste de intruziune.",
+      "Citește anunțul din august 2026 despre redeschiderea etapizată estimată (nu egala estimarea cu uptime confirmat). Nu rula teste de intruziune.",
     ],
     browser: "oricare (indisponibilitate de infrastructură, nu problemă de client)",
     url: "https://eterra3.ancpi.ro",
     summary:
-      "Incident documentat oficial: pe 14 iulie 2026 ANCPI a constatat acces neautorizat; DNSC a confirmat ransomware asupra infrastructurii de virtualizare. e-Terra și serviciile conexe au fost scoase din funcțiune la nivel național. Guvernul raportează că baza centrală cadastrală nu a fost afectată. Nu e sentință, e fapt de disponibilitate și securitate din surse publice.",
+      "Incident documentat oficial: pe 14 iulie 2026 ANCPI a constatat acces neautorizat; DNSC a confirmat ransomware asupra infrastructurii de virtualizare. e-Terra și serviciile conexe au fost scoase din funcțiune la nivel național. Guvernul raportează că baza centrală cadastrală nu a fost afectată. În august 2026, Guvernul a estimat o redeschidere etapizată; până la confirmare publică a disponibilității, rămâne incident de disponibilitate. Nu e sentință.",
     sources: [
       {
         title:
@@ -50,6 +50,11 @@ export const registryIncidents: IncidentRecord[] = [
         title:
           "DNSC · Analiză tehnică intermediară incident ANCPI (PDF, mirror publicat în presă)",
         url: "https://www.go4it.ro/wp-content/uploads/2026/07/DNSC-T66-v2026.07.22-Anexa-tehnica-incident-ANCPI.pdf",
+      },
+      {
+        title:
+          "G4Media · Guvernul estimează redeschiderea etapizată a e-Terra (august 2026)",
+        url: "https://www.g4media.ro/platforma-e-terra-a-ancpi-va-deveni-functionala-in-cursul-saptamanii-viitoare-potrivit-estimarilor-guvernul-anunta-cum-vor-fi-reluate-operatiunile-si-in-ce-ordine.html",
       },
     ],
     demo: false,

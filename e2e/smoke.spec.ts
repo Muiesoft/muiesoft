@@ -6,6 +6,11 @@ test("homepage loads", async ({ page }) => {
   await expect(
     page.locator("main").getByText("Toată hula", { exact: false }).first(),
   ).toBeVisible();
+  await expect(
+    page.getByRole("link", {
+      name: /e-Terra \/ ANCPI/i,
+    }),
+  ).toBeVisible();
 });
 
 test("navigate to MuieLex", async ({ page }) => {
@@ -39,9 +44,13 @@ test("navigate to MuieIndex", async ({ page }) => {
 });
 
 test("open preview tab modal content", async ({ page }) => {
-  await page.goto("/muie-index");
-  await page.getByRole("tab", { name: "Incidente" }).click();
+  await page.goto("/muie-index?tab=incidente");
+  await expect(page.getByRole("tab", { name: "Incidente" })).toHaveAttribute(
+    "aria-selected",
+    "true",
+  );
   await expect(page.getByTestId("incident-card").first()).toBeVisible();
+  await expect(page.getByText("e-Terra", { exact: false }).first()).toBeVisible();
   await expect(page.getByText("Ghișeul.ro", { exact: false }).first()).toBeVisible();
 });
 

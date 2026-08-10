@@ -51,7 +51,7 @@ export function IncidentsPulse() {
       </ul>
 
       <div className="mt-8">
-        <Button href="/muie-index" variant="secondary">
+        <Button href="/muie-index?tab=incidente" variant="secondary">
           Toate în Muie Index
         </Button>
       </div>

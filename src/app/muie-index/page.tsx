@@ -10,8 +10,14 @@ export const metadata = buildMetadata({
   path: "/muie-index",
 });
 
-export default async function MuieIndexPage() {
+type Props = {
+  searchParams: Promise<{ tab?: string | string[] }>;
+};
+
+export default async function MuieIndexPage({ searchParams }: Props) {
   const ranking = await institutionRepository.getRanking();
+  const params = await searchParams;
+  const tab = Array.isArray(params.tab) ? params.tab[0] : params.tab;
 
   return (
     <>
@@ -29,7 +35,7 @@ export default async function MuieIndexPage() {
           </>
         }
       />
-      <MuieIndexClient ranking={ranking} />
+      <MuieIndexClient ranking={ranking} initialTab={tab} />
     </>
   );
 }

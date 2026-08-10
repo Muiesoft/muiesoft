@@ -48,6 +48,7 @@ export const footerNav = {
     { label: "Manifest", href: "/manifest" },
     { label: "Principii", href: "/principii" },
     { label: "Ediție", href: "/editie" },
+    { label: "Premii", href: "/premii" },
     { label: "Transparență", href: "/transparenta" },
     { label: "Changelog", href: "/changelog" },
   ],
@@ -57,6 +58,7 @@ export const footerNav = {
     { label: "MuieLex", href: "/lex" },
     { label: "Bani", href: "/bani" },
     { label: "Legea 544", href: "/544" },
+    { label: "Ediție", href: "/editie" },
   ],
   cod: [
     { label: "API", href: "/api" },

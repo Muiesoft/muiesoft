@@ -12,6 +12,10 @@ const tlsCodes = new Set([
   "UNABLE_TO_GET_ISSUER_CERT_LOCALLY",
 ]);
 
+const EXTRA_TARGETS = [
+  { slug: "ancpi-eterra", url: "https://eterra3.ancpi.ro" },
+];
+
 function targets() {
   const src = readFileSync(servicesFile, "utf8");
   const slugs = [...src.matchAll(/slug: "([^"]+)"/g)].map((m) => m[1]);
@@ -20,7 +24,7 @@ function targets() {
     console.error(`probe: ${slugs.length} slugs vs ${sites.length} websites în services.ts`);
     process.exit(1);
   }
-  return slugs.map((slug, i) => ({ slug, url: sites[i] }));
+  return [...slugs.map((slug, i) => ({ slug, url: sites[i] })), ...EXTRA_TARGETS];
 }
 
 function verdictFor(status) {

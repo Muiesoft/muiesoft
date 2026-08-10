@@ -8,6 +8,23 @@ export type ChangelogEntry = {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: "v0.4.5",
+    date: "2026-08-10",
+    added: [
+      "Deep-link `/muie-index?tab=incidente` din homepage",
+      "Incidente în `/feed.xml`; Premii/Ediție mai ușor de găsit în footer",
+      "Probă HTTP suplimentară pe eterra3.ancpi.ro (`ancpi-eterra`)",
+    ],
+    removed: [
+      "Componente home orphaned (preview-uri demontate de pe `/`)",
+    ],
+    changed: [
+      "Featured Merge La Mine™: doar cazul ANCPI",
+      "Docs/README aliniate cu probe reale și formate editoriale active",
+      "Incident ANCPI: sursă + notă despre redeschiderea etapizată estimată (fără claim de uptime)",
+    ],
+  },
+  {
     version: "v0.4.4",
     date: "2026-08-10",
     added: [

@@ -26,7 +26,9 @@ export default function EditiePage() {
               prostia verificabilă.
             </p>
             <p className="mt-4 text-sm">
-              Primul caz live: Merge La Mine™. Restul așteaptă surse.
+              Formate active cu cazuri documentate: Merge La Mine™, Cât a
+              costat butonul, Atenție urmează digitalizare. Restul așteaptă
+              surse.
             </p>
           </>
         }

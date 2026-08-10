@@ -27,7 +27,7 @@ export const editorialCases: EditorialCase[] = [
     url: "https://eterra3.ancpi.ro",
     status: "DOCUMENTAT",
     summary:
-      "Pe 14 iulie 2026, ANCPI a constatat acces neautorizat în infrastructura proprie. DNSC a confirmat un atac ransomware: o parte din infrastructura de virtualizare a fost criptată și ștearsă. e-Terra, ePay și emailul instituțional au picat; fără extrase de carte funciară, autentificările imobiliare s-au blocat național. Guvernul spune că baza centrală a evidenței proprietăților a rămas intactă. Fapte din surse oficiale și presă. Nu e sentință: e cartea funciară ca SPOF al pieței imobiliare.",
+      "Pe 14 iulie 2026, ANCPI a constatat acces neautorizat în infrastructura proprie. DNSC a confirmat un atac ransomware: o parte din infrastructura de virtualizare a fost criptată și ștearsă. e-Terra, ePay și emailul instituțional au picat; fără extrase de carte funciară, autentificările imobiliare s-au blocat național. Guvernul spune că baza centrală a evidenței proprietăților a rămas intactă și a estimat (august 2026) o redeschidere etapizată. Estimare ≠ uptime confirmat. Nu e sentință: e cartea funciară ca SPOF al pieței imobiliare.",
     steps: [
       "Citește comunicatul Guvernului din 27 iulie 2026: data constatării (14 iulie), tipul de atac (ransomware), sistemele afectate.",
       "Notează precizarea oficială că baza de date centrală cadastrală e raportată neafectată și că nu există dovezi de acces la acele date.",
@@ -86,7 +86,7 @@ export const editorialCases: EditorialCase[] = [
         url: "https://hotnews.ro/plata-online-a-taxelor-prin-ghiseul-ro-va-redeveni-functionala-vineri-sef-adr-a-ars-doar-condensatorul-unui-ups-avem-de-restaurat-un-volum-foarte-mare-de-peste-200-de-tb-de-metadate-1901922",
       },
     ],
-    featured: true,
+    featured: false,
   },
   {
     id: "cloud-dedicat-417-mil",
