@@ -18,9 +18,9 @@ export function StatusStrip() {
       <div className="mx-auto flex max-w-6xl flex-col gap-5">
         <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="font-mono text-xs tracking-[0.16em] text-acid uppercase">
-              Registry public
-            </p>
+            <h2 className="font-mono text-xs tracking-[0.16em] text-acid uppercase">
+              Status registry
+            </h2>
             <p className="mt-2 font-mono text-sm tracking-wide uppercase">
               {total} portaluri în catalog
             </p>
@@ -52,6 +52,10 @@ export function StatusStrip() {
           {probeTimestamp(probeData.generatedAt)} ·{" "}
           <Link href="/muie-index" className="text-acid hover:underline">
             MUIEINDEX
+          </Link>
+          {" · "}
+          <Link href="/status" className="text-acid hover:underline">
+            STATUS
           </Link>
         </p>
       </div>

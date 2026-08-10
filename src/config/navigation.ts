@@ -58,7 +58,6 @@ export const footerNav = {
     { label: "MuieLex", href: "/lex" },
     { label: "Bani", href: "/bani" },
     { label: "Legea 544", href: "/544" },
-    { label: "Ediție", href: "/editie" },
   ],
   cod: [
     { label: "API", href: "/api" },

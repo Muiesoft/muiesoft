@@ -8,6 +8,19 @@ export type ChangelogEntry = {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: "v0.4.6",
+    date: "2026-08-10",
+    added: [],
+    removed: [
+      "Cei 4 piloni de pe homepage (rămân în nav)",
+    ],
+    changed: [
+      "Homepage: Mission fără carduri redundante; MUIE restilizat tipografic",
+      "IncidentsPulse: maxim 3 pe home; StatusStrip cu link /status",
+      "Footer: Ediție deduplicat din unelte",
+    ],
+  },
+  {
     version: "v0.4.5",
     date: "2026-08-10",
     added: [

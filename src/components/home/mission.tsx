@@ -21,20 +21,6 @@ export function Mission() {
           Fără date inventate. Fără acuzații fără dovezi.
         </p>
       </div>
-      <div className="mt-14 grid gap-6 md:grid-cols-3">
-        {[
-          ["CETĂȚEANUL", "privat"],
-          ["STATUL", "transparent"],
-          ["CODUL", "public"],
-        ].map(([label, value]) => (
-          <div key={label} className="border border-border p-6">
-            <p className="terminal-label">{label}</p>
-            <p className="font-display mt-3 text-4xl font-bold uppercase text-acid">
-              {value}
-            </p>
-          </div>
-        ))}
-      </div>
     </Section>
   );
 }

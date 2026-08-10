@@ -14,9 +14,9 @@ function truncate(text: string, max: number): string {
 }
 
 export function IncidentsPulse() {
-  const incidents = [...registryIncidents].sort((a, b) =>
-    b.when.localeCompare(a.when),
-  );
+  const incidents = [...registryIncidents]
+    .sort((a, b) => b.when.localeCompare(a.when))
+    .slice(0, 3);
 
   return (
     <Section id="incidente">

@@ -20,19 +20,29 @@ export async function MuieIndexPreview() {
       <p className="font-display mt-4 text-2xl text-muted uppercase md:text-3xl">
         Cine ne fute timpul cel mai tare?
       </p>
-      <div className="mt-8 grid gap-3 md:grid-cols-4">
+      <p
+        className="mt-8 flex flex-wrap items-baseline gap-x-4 gap-y-2 font-mono text-sm tracking-wide uppercase"
+        aria-label="Măsurarea Uzabilității Interoperabilității Eficienței"
+      >
         {[
           ["M", "Măsurarea"],
           ["U", "Uzabilității"],
           ["I", "Interoperabilității"],
           ["E", "Eficienței"],
-        ].map(([letter, word]) => (
-          <div key={letter} className="border border-border p-4">
-            <p className="font-display text-3xl text-acid">{letter}</p>
-            <p className="mt-1 text-sm text-muted">{word}</p>
-          </div>
+        ].map(([letter, word], index) => (
+          <span key={letter} className="inline-flex items-baseline gap-2">
+            {index > 0 ? (
+              <span className="text-border" aria-hidden>
+                ·
+              </span>
+            ) : null}
+            <span className="font-display text-2xl text-acid md:text-3xl">
+              {letter}
+            </span>
+            <span className="text-muted">{word}</span>
+          </span>
         ))}
-      </div>
+      </p>
       <div className="mt-10 border border-border">
         <div className="border-b border-border px-4 py-3 font-mono text-xs tracking-wider text-muted uppercase">
           Leaderboard: estimare utilizatori
