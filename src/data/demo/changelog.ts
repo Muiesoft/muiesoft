@@ -8,6 +8,30 @@ export type ChangelogEntry = {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: "v0.4.4",
+    date: "2026-08-10",
+    added: [
+      "Homepage: feed de incidente documentate (IncidentsPulse) imediat după pillars",
+    ],
+    removed: [],
+    changed: [
+      "Homepage redus: păstrate Status/Mission/Pillars; scoase preview-urile de module de pe `/`",
+      "Ediție pe home: un singur caz featured, fără grilă de formate",
+    ],
+  },
+  {
+    version: "v0.4.3",
+    date: "2026-08-10",
+    added: [
+      "Incident + caz editorial ANCPI/e-Terra (ransomware iulie 2026), cu surse oficiale",
+      "Premiul „Cartea Funciară de Buzunar” pentru e-Terra offline național",
+    ],
+    removed: [],
+    changed: [
+      "Registry ANCPI: status degraded + summary/score actualizate după incident",
+    ],
+  },
+  {
     version: "v0.4.2",
     date: "2026-08-10",
     added: [

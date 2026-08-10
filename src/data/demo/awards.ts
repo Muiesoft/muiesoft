@@ -132,4 +132,19 @@ export const demoAwards: Award[] = [
     caseHref: "/editie/atentie-urmeaza-digitalizare",
     demo: false,
   },
+  {
+    id: "a13",
+    slug: "cartea-funciara-offline",
+    name: "Cartea Funciară de Buzunar",
+    description:
+      "Pentru evidența națională a proprietății care dispară când pică un singur cluster.",
+    category: "absurd",
+    status: "awarded",
+    laureate: "ANCPI · e-Terra · iulie 2026",
+    citation:
+      "Ransomware confirmat oficial: e-Terra offline național, piața imobiliară blocată fără extrase CF. Documentat din surse Guvern/DNSC/presă.",
+    caseHref:
+      "/muie-index/incidente/inc-ancpi-eterra-ransomware-2026-07",
+    demo: false,
+  },
 ];

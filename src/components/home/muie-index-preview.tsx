@@ -60,8 +60,11 @@ export async function MuieIndexPreview() {
         Acum: estimări etichetate. Viitor: probe automate (uptime, UX, a11y,
         interoperabilitate) cu surse.
       </p>
-      <div className="mt-8">
+      <div className="mt-8 flex flex-wrap gap-3">
         <Button href="/muie-index">Deschide clasamentul</Button>
+        <Button href="/harta" variant="secondary">
+          Harta
+        </Button>
       </div>
     </Section>
   );

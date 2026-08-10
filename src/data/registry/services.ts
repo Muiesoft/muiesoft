@@ -381,17 +381,18 @@ export const registryServices: Institution[] = [
     category: "Cadastru",
     website: "https://www.ancpi.ro",
     county: "Național",
-    status: "operational",
+    status: "degraded",
     digitalServices: 4,
     physicalRequired: 1,
     pdfCountLabel: "moderate",
     summary:
-      "Extrase de carte funciară online și plăți electronice care chiar funcționează. Sentimentul: printre puținele instituții unde digitalul livrează, cu tot cu jargon cadastral.",
+      "Cadastru și carte funciară prin e-Terra. În iulie 2026, un ransomware confirmat oficial a scos e-Terra din funcțiune la nivel național; Guvernul raportează baza centrală intactă. Statusul din catalog e degradație de disponibilitate, nu sentință. Vezi incidentul documentat.",
     scoreKind: "opinion-estimate",
-    scoreNote: opinionNote,
+    scoreNote:
+      "Estimare pe baza frustrărilor și așteptărilor comune ale utilizatorilor, actualizată după incidentul ransomware e-Terra din iulie 2026 (surse oficiale pe pagina de incident). NU este măsurătoare Muie Index, NU este studiu statistic, NU este uptime real.",
     score: {
-      total: 52,
-      reliability: 60,
+      total: 44,
+      reliability: 38,
       usability: 45,
       accessibility: 42,
       interoperability: 50,

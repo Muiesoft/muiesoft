@@ -30,7 +30,7 @@ export function HomeHero() {
           Stat transparent.
         </p>
         <div className="reveal mt-10 flex flex-wrap gap-3">
-          <Button href="/muie-index">Vezi ce e futut</Button>
+          <Button href="#incidente">Ce e picat</Button>
           <Button href="/contribuie" variant="secondary">
             Fork România
           </Button>

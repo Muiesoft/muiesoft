@@ -14,6 +14,47 @@ export type IncidentRecord = {
 
 export const registryIncidents: IncidentRecord[] = [
   {
+    id: "inc-ancpi-eterra-ransomware-2026-07",
+    title:
+      "e-Terra / ANCPI: ransomware, cartea funciară offline național (iulie 2026)",
+    status: "DOCUMENTAT",
+    when: "2026-07-14",
+    serviceSlug: "ancpi-ro",
+    steps: [
+      "Citește comunicatul Guvernului din 27 iulie 2026 despre accesul neautorizat constatat de ANCPI pe 14 iulie și confirmarea atacului ransomware.",
+      "Notează sistemele raportate ca afectate: e-Terra (cadastru și carte funciară), ePay, email instituțional; infrastructură de virtualizare criptată/ștearsă parțial.",
+      "Citește precizarea oficială: baza de date centrală a evidenței proprietăților e raportată intactă; nu există dovezi de acces la aceste date.",
+      "Citește analiza de impact juridic (blocaj extrase CF / autentificări notariale) din sursa Juridice de mai jos. Nu rula teste de intruziune.",
+    ],
+    browser: "oricare (indisponibilitate de infrastructură, nu problemă de client)",
+    url: "https://eterra3.ancpi.ro",
+    summary:
+      "Incident documentat oficial: pe 14 iulie 2026 ANCPI a constatat acces neautorizat; DNSC a confirmat ransomware asupra infrastructurii de virtualizare. e-Terra și serviciile conexe au fost scoase din funcțiune la nivel național. Guvernul raportează că baza centrală cadastrală nu a fost afectată. Nu e sentință, e fapt de disponibilitate și securitate din surse publice.",
+    sources: [
+      {
+        title:
+          "Guvernul României · Stadiul repunerii e-Terra după incidentul de securitate cibernetică (27 iulie 2026)",
+        url: "https://gov.ro/ro/media/comunicate/stadiul-repunerii-in-functiune-a-sistemului-informatic-e-terra-in-urma-incidentului-de-securitate-cibernetica",
+      },
+      {
+        title:
+          "Digi24 · Guvernul: baza cadastrală nu a fost afectată; fără dată fermă pentru repornirea e-Terra",
+        url: "https://www.digi24.ro/digieconomic/digital/guvernul-noi-precizari-despre-atacul-de-la-ancpi-baza-cadastrala-nu-a-fost-afectata-nu-exista-o-data-pentru-repornirea-e-terra-111917",
+      },
+      {
+        title:
+          "Juridice.ro · Atacul cibernetic asupra ANCPI: blocajul pieței imobiliare și implicațiile juridice",
+        url: "https://www.juridice.ro/841344/atacul-cibernetic-asupra-ancpi-blocajul-pietei-imobiliare-si-implicatiile-juridice-rezultate-din-acesta.html",
+      },
+      {
+        title:
+          "DNSC · Analiză tehnică intermediară incident ANCPI (PDF, mirror publicat în presă)",
+        url: "https://www.go4it.ro/wp-content/uploads/2026/07/DNSC-T66-v2026.07.22-Anexa-tehnica-incident-ANCPI.pdf",
+      },
+    ],
+    demo: false,
+  },
+  {
     id: "inc-ghiseul-offline-2025-02",
     title: "Ghișeul.ro indisponibil (februarie 2025)",
     status: "DEGRADAT",

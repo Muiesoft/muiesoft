@@ -19,6 +19,46 @@ export type EditorialCase = {
 
 export const editorialCases: EditorialCase[] = [
   {
+    id: "ancpi-eterra-ransomware-2026-07",
+    formatSlug: "merge-la-mine",
+    title: "e-Terra offline · proprietatea ta, pe server criptat",
+    date: "2026-07-14",
+    institution: "ANCPI · e-Terra (cadastru și carte funciară)",
+    url: "https://eterra3.ancpi.ro",
+    status: "DOCUMENTAT",
+    summary:
+      "Pe 14 iulie 2026, ANCPI a constatat acces neautorizat în infrastructura proprie. DNSC a confirmat un atac ransomware: o parte din infrastructura de virtualizare a fost criptată și ștearsă. e-Terra, ePay și emailul instituțional au picat; fără extrase de carte funciară, autentificările imobiliare s-au blocat național. Guvernul spune că baza centrală a evidenței proprietăților a rămas intactă. Fapte din surse oficiale și presă. Nu e sentință: e cartea funciară ca SPOF al pieței imobiliare.",
+    steps: [
+      "Citește comunicatul Guvernului din 27 iulie 2026: data constatării (14 iulie), tipul de atac (ransomware), sistemele afectate.",
+      "Notează precizarea oficială că baza de date centrală cadastrală e raportată neafectată și că nu există dovezi de acces la acele date.",
+      "Citește analiza Juridice despre de ce lipsa extrasului CF blochează autentificările notariale (Legea 7/1996).",
+      "Citește analiza tehnică intermediară DNSC (PDF) pentru ce e confirmat tehnic versus ce rămâne în anchetă. Fără teste de intruziune.",
+    ],
+    sources: [
+      {
+        title:
+          "Guvernul României · Stadiul repunerii e-Terra după incidentul de securitate cibernetică",
+        url: "https://gov.ro/ro/media/comunicate/stadiul-repunerii-in-functiune-a-sistemului-informatic-e-terra-in-urma-incidentului-de-securitate-cibernetica",
+      },
+      {
+        title:
+          "Digi24 · Guvernul: baza cadastrală nu a fost afectată; fără dată fermă pentru e-Terra",
+        url: "https://www.digi24.ro/digieconomic/digital/guvernul-noi-precizari-despre-atacul-de-la-ancpi-baza-cadastrala-nu-a-fost-afectata-nu-exista-o-data-pentru-repornirea-e-terra-111917",
+      },
+      {
+        title:
+          "Juridice.ro · Blocajul pieței imobiliare și implicațiile juridice ale atacului ANCPI",
+        url: "https://www.juridice.ro/841344/atacul-cibernetic-asupra-ancpi-blocajul-pietei-imobiliare-si-implicatiile-juridice-rezultate-din-acesta.html",
+      },
+      {
+        title:
+          "DNSC · Analiză tehnică intermediară incident ANCPI (PDF, mirror publicat în presă)",
+        url: "https://www.go4it.ro/wp-content/uploads/2026/07/DNSC-T66-v2026.07.22-Anexa-tehnica-incident-ANCPI.pdf",
+      },
+    ],
+    featured: true,
+  },
+  {
     id: "ghiseul-offline-2025-02",
     formatSlug: "merge-la-mine",
     title: "Ghișeul.ro offline · „coadă la ghișeul virtual”",
@@ -134,7 +174,7 @@ export const editorialCases: EditorialCase[] = [
         url: "https://www.ssllabs.com/ssltest/analyze.html?d=portal.just.ro",
       },
     ],
-    featured: true,
+    featured: false,
   },
   {
     id: "onrc-srl-ghiseu-final",

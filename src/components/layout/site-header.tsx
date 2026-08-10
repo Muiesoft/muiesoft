@@ -20,7 +20,7 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="site-header-blur sticky top-0 z-50 border-b border-border bg-background/95">
+      <header className="site-header-blur sticky top-0 z-50 select-none border-b border-border bg-background/95">
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 md:h-16 md:px-8">
           <Link
             href="/"
@@ -90,7 +90,7 @@ export function SiteHeader() {
       <div
         id="mobile-menu"
         className={cn(
-          "fixed inset-x-0 bottom-0 top-14 z-[60] overflow-y-auto overscroll-contain bg-background px-6 py-6 lg:hidden",
+          "fixed inset-x-0 bottom-0 top-14 z-[60] select-none overflow-y-auto overscroll-contain bg-background px-6 py-6 lg:hidden",
           open ? "block" : "hidden",
         )}
       >

@@ -9,6 +9,7 @@ export type NavItem = {
 
 export const mainNav: NavItem[] = [
   { label: "MUIEINDEX", href: "/muie-index", feature: "muieIndex" },
+  { label: "HARTA", href: "/harta", feature: "harta" },
   { label: "MUIELEX", href: "/lex", feature: "muieLex" },
   { label: "REZOLVĂ", href: "/rezolva", feature: "rezolva" },
   { label: "BANII", href: "/bani", feature: "money" },
@@ -52,6 +53,7 @@ export const footerNav = {
   ],
   unelte: [
     { label: "MuieIndex", href: "/muie-index" },
+    { label: "Harta", href: "/harta" },
     { label: "MuieLex", href: "/lex" },
     { label: "Bani", href: "/bani" },
     { label: "Legea 544", href: "/544" },
