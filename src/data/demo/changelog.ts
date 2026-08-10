@@ -8,6 +8,17 @@ export type ChangelogEntry = {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: "v0.4.2",
+    date: "2026-08-10",
+    added: [
+      "StampLoader: sigiliu de loading CSS-only, reutilizabil, pe route loading",
+    ],
+    removed: [],
+    changed: [
+      "Loading: mesaje cu fade + respect pentru prefers-reduced-motion",
+    ],
+  },
+  {
     version: "v0.4.1",
     date: "2026-08-10",
     added: [

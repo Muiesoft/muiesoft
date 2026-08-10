@@ -55,6 +55,14 @@ Definite în `src/config/features.ts`:
 
 Componentă: `<FeatureStatus feature="muieLex" />`
 
+## Loading
+
+Route loading (`app/loading.tsx`) folosește `<StampLoader />` + mesaje din `brandCopy.loading`.
+
+- Componentă reutilizabilă: `src/components/ui/stamp-loader.tsx` (`sm` / `md` / `lg`)
+- Animație CSS-only (fără librării), oprită la `prefers-reduced-motion`
+- Exemplu: `<StampLoader size="md" />`
+
 ## Demo data
 
 Orice record mock are `demo: true` și apare cu `<DemoBadge />`.

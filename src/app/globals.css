@@ -72,6 +72,17 @@ html {
     transform: none;
     animation: none !important;
   }
+
+  .stamp-orbit,
+  .stamp-orbit-slow,
+  .stamp-orbit-mid,
+  .stamp-orbit-reverse,
+  .stamp-press,
+  .stamp-core,
+  .stamp-dash-crawl,
+  .stamp-dash-crawl-reverse {
+    animation: none !important;
+  }
 }
 
 body {
@@ -158,6 +169,112 @@ body {
 
 .status-pulse {
   animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes stamp-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes stamp-spin-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes stamp-press {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.985);
+  }
+}
+
+@keyframes stamp-core-breathe {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.72;
+    transform: scale(0.94);
+  }
+}
+
+@keyframes stamp-dash-crawl {
+  to {
+    stroke-dashoffset: -48;
+  }
+}
+
+@keyframes stamp-dash-crawl-reverse {
+  to {
+    stroke-dashoffset: 48;
+  }
+}
+
+.stamp-orbit,
+.stamp-orbit-slow,
+.stamp-orbit-mid,
+.stamp-orbit-reverse,
+.stamp-core {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.stamp-orbit {
+  animation: stamp-spin 10s linear infinite;
+}
+
+.stamp-orbit-slow {
+  animation: stamp-spin 28s linear infinite;
+}
+
+.stamp-orbit-mid {
+  animation: stamp-spin-reverse 14s linear infinite;
+}
+
+.stamp-orbit-reverse {
+  animation: stamp-spin-reverse 22s linear infinite;
+}
+
+.stamp-press {
+  animation: stamp-press 3.2s ease-in-out infinite;
+}
+
+.stamp-core {
+  animation: stamp-core-breathe 2.8s ease-in-out infinite;
+}
+
+.stamp-dash-crawl {
+  animation: stamp-dash-crawl 4s linear infinite;
+}
+
+.stamp-dash-crawl-reverse {
+  animation: stamp-dash-crawl-reverse 6s linear infinite;
+}
+
+@keyframes loading-msg-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.loading-msg-fade {
+  animation: loading-msg-fade 0.45s ease-out both;
 }
 
 @keyframes reveal-up {
