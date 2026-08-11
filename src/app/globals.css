@@ -345,9 +345,8 @@ html[data-cookie-banner] [data-testid="rude-chatbot"] {
 
 @media (max-width: 767px) {
   [data-testid="rude-chatbot"] {
-    inset: 0;
-    width: 100%;
-    height: 100dvh;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 }
 

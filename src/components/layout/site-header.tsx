@@ -69,13 +69,13 @@ export function SiteHeader() {
           <div className="flex items-center gap-2 lg:hidden">
             <Link
               href="/login"
-              className="border border-border px-3 py-2 font-mono text-xs tracking-[0.14em] uppercase"
+              className="inline-flex h-11 items-center justify-center border border-border px-3 font-mono text-xs tracking-[0.14em] uppercase"
             >
               Intră
             </Link>
             <button
               type="button"
-              className="inline-flex min-h-11 min-w-11 items-center justify-center border border-border"
+              className="inline-flex h-11 w-11 items-center justify-center border border-border"
               aria-expanded={open}
               aria-controls="mobile-menu"
               aria-label={open ? "Închide meniul" : "Deschide meniul"}

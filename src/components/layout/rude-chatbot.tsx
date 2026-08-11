@@ -21,35 +21,44 @@ function isMobileViewport(): boolean {
   return window.matchMedia("(max-width: 767px)").matches;
 }
 
+function clearSheetGeometry(node: HTMLElement) {
+  node.style.top = "";
+  node.style.left = "";
+  node.style.right = "";
+  node.style.width = "";
+  node.style.height = "";
+  node.style.bottom = "";
+  node.style.maxWidth = "";
+  node.style.boxSizing = "";
+  node.style.overflowX = "";
+}
+
 function applyMobileSheet(node: HTMLElement | null) {
   if (!node) return;
   if (!isMobileViewport()) {
-    node.style.top = "";
-    node.style.left = "";
-    node.style.right = "";
-    node.style.width = "";
-    node.style.height = "";
-    node.style.bottom = "";
+    clearSheetGeometry(node);
     document.body.style.removeProperty("overflow");
     return;
   }
   document.body.style.overflow = "hidden";
+  node.style.boxSizing = "border-box";
+  node.style.overflowX = "hidden";
+  node.style.right = "";
+  node.style.bottom = "";
   const vv = window.visualViewport;
   if (!vv) {
     node.style.top = "0px";
     node.style.left = "0px";
-    node.style.right = "0px";
     node.style.width = "100%";
+    node.style.maxWidth = "100%";
     node.style.height = "100dvh";
-    node.style.bottom = "auto";
     return;
   }
   node.style.top = `${vv.offsetTop}px`;
-  node.style.left = "0px";
-  node.style.right = "0px";
-  node.style.width = "100%";
+  node.style.left = `${vv.offsetLeft}px`;
+  node.style.width = `${vv.width}px`;
+  node.style.maxWidth = `${vv.width}px`;
   node.style.height = `${vv.height}px`;
-  node.style.bottom = "auto";
 }
 
 export function RudeChatbot() {
@@ -205,7 +214,7 @@ export function RudeChatbot() {
           ref={panelRef}
           className={cn(
             "fixed z-[66] flex flex-col border border-border bg-surface-elevated",
-            "max-md:inset-0 max-md:h-dvh max-md:w-full max-md:rounded-none max-md:border-x-0 max-md:border-t-0",
+            "max-md:rounded-none max-md:border-x-0 max-md:border-t-0 max-md:overflow-x-hidden",
             "md:h-[min(70dvh,520px)] md:w-[min(100%-2rem,380px)]",
           )}
           role="dialog"

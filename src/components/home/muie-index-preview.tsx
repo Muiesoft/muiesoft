@@ -21,7 +21,7 @@ export async function MuieIndexPreview() {
         Cine ne fute timpul cel mai tare?
       </p>
       <p
-        className="mt-8 flex flex-wrap items-baseline gap-x-4 gap-y-2 font-mono text-sm tracking-wide uppercase"
+        className="mt-8 grid grid-cols-2 border border-border md:grid-cols-4"
         aria-label="Măsurarea Uzabilității Interoperabilității Eficienței"
       >
         {[
@@ -29,17 +29,17 @@ export async function MuieIndexPreview() {
           ["U", "Uzabilității"],
           ["I", "Interoperabilității"],
           ["E", "Eficienței"],
-        ].map(([letter, word], index) => (
-          <span key={letter} className="inline-flex items-baseline gap-2">
-            {index > 0 ? (
-              <span className="text-border" aria-hidden>
-                ·
-              </span>
-            ) : null}
-            <span className="font-display text-2xl text-acid md:text-3xl">
+        ].map(([letter, word]) => (
+          <span
+            key={letter}
+            className="border-border p-4 max-md:odd:border-r max-md:[&:nth-child(-n+2)]:border-b md:border-r md:last:border-r-0"
+          >
+            <span className="font-display block text-2xl text-acid md:text-3xl">
               {letter}
             </span>
-            <span className="text-muted">{word}</span>
+            <span className="mt-1 block font-mono text-xs tracking-wide text-muted uppercase md:text-sm">
+              {word}
+            </span>
           </span>
         ))}
       </p>
