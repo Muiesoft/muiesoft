@@ -14,7 +14,6 @@
   --ro-blue: #002b7f;
   --ro-yellow: #fcd116;
   --ro-red: #ce1126;
-  --fab-stack: 0px;
   --fab-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
   --fab-right: max(1rem, env(safe-area-inset-right, 0px));
   --fab-gap: 4.5rem;
@@ -325,9 +324,14 @@ body {
   white-space: normal;
 }
 
+html[data-cookie-banner] [data-testid="chatbot-launcher"],
+html[data-cookie-banner] [data-testid="rude-chatbot"] {
+  display: none !important;
+}
+
 [data-testid="chatbot-launcher"] {
   right: var(--fab-right);
-  bottom: calc(var(--fab-bottom) + var(--fab-stack));
+  bottom: var(--fab-bottom);
   transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -356,7 +360,7 @@ body {
 
   [data-testid="rude-chatbot"] {
     right: var(--fab-right);
-    bottom: calc(var(--fab-bottom) + var(--fab-stack));
+    bottom: var(--fab-bottom);
   }
 }
 

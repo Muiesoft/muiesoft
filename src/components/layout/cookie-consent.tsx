@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,19 +11,6 @@ import {
   writeCookiePreferences,
   type CookiePreferences,
 } from "@/lib/cookies";
-import { cn } from "@/lib/utils";
-
-const FAB_STACK_GAP_PX = 12;
-
-function clearFabStack() {
-  document.documentElement.style.setProperty("--fab-stack", "0px");
-}
-
-function setFabStack(height: number) {
-  const stack = Math.max(0, Math.ceil(height) + FAB_STACK_GAP_PX);
-  document.documentElement.style.setProperty("--fab-stack", `${stack}px`);
-}
-
 type Snapshot = {
   saved: CookiePreferences | null;
   forcedOpen: boolean;
@@ -102,27 +89,17 @@ export function CookieConsent() {
   const visible =
     isClient && (snapshot.forcedOpen || snapshot.saved === null);
   const showDetails = userExpanded ?? snapshot.forcedOpen;
-  const bannerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!visible) {
-      clearFabStack();
+      delete document.documentElement.dataset.cookieBanner;
       return;
     }
-    const node = bannerRef.current;
-    if (!node || typeof ResizeObserver === "undefined") {
-      clearFabStack();
-      return;
-    }
-    const sync = () => setFabStack(node.getBoundingClientRect().height);
-    sync();
-    const observer = new ResizeObserver(sync);
-    observer.observe(node);
+    document.documentElement.dataset.cookieBanner = "";
     return () => {
-      observer.disconnect();
-      clearFabStack();
+      delete document.documentElement.dataset.cookieBanner;
     };
-  }, [visible, showDetails]);
+  }, [visible]);
 
   if (!visible) return null;
 
@@ -141,10 +118,7 @@ export function CookieConsent() {
 
   return (
     <div
-      ref={bannerRef}
-      className={cn(
-        "fixed inset-x-0 bottom-0 z-[70] border-t border-border bg-surface-elevated/98 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] shadow-[0_-8px_40px_rgba(0,0,0,0.45)] md:p-6 md:pb-[max(1.5rem,env(safe-area-inset-bottom))]",
-      )}
+      className="fixed inset-x-0 bottom-0 z-[70] border-t-2 border-acid bg-[#1c1a14] p-4 pb-[max(1rem,env(safe-area-inset-bottom))] shadow-[0_-8px_40px_rgba(0,0,0,0.45)] md:p-6 md:pb-[max(1.5rem,env(safe-area-inset-bottom))]"
       role="dialog"
       aria-modal="false"
       aria-labelledby="cookie-title"
