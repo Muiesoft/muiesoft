@@ -8,6 +8,20 @@ export type ChangelogEntry = {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: "v0.5.2",
+    date: "2026-08-20",
+    added: [
+      "Verdict unreachable: proba din runner nu a ajuns, nu e afirmație de cădere",
+      "Tabel de portaluri pe /status, cu e-Terra legat de incidentul documentat",
+    ],
+    removed: [],
+    changed: [
+      "403/429/503 = refuză clienți automați; timeout/RST nu mai pică pip-ul în roșu",
+      "e-Terra iese din pip-ul din header; Muie Score nu mai pedepsește unreachable",
+      "544: arhiva locală e aici; trimiterea către instituție rămâne pe cetățean",
+    ],
+  },
+  {
     version: "v0.5.1",
     date: "2026-08-20",
     added: [

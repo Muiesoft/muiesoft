@@ -62,9 +62,10 @@ export default async function Freedom544Page({ searchParams }: Props) {
             </p>
             <p className="mt-4 max-w-2xl text-sm text-muted">
               Aici generezi cererea local, în browser: alegi instituția, scrii
-              ce vrei să afli, descarci textul. Trimiterea și arhiva de răspunsuri
-              vin după. Obiectiv pe termen lung: cea mai mare arhivă
-              machine-readable de răspunsuri 544 din România.
+              ce vrei să afli, copiezi sau descarci textul. Arhiva rămâne pe
+              dispozitivul tău. Trimiterea către instituție e treaba ta.
+              Obiectiv pe termen lung: cea mai mare arhivă machine-readable de
+              răspunsuri 544 din România.
             </p>
           </>
         }

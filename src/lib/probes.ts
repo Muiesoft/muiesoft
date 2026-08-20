@@ -1,7 +1,21 @@
 import raw from "@/data/registry/probes.json";
 import type { ProbeData, ProbeResult, ProbeVerdict } from "@/domain/probe";
+import {
+  headerStateFrom,
+  remapHistoryDay,
+  remapHistoryVerdict,
+} from "@/lib/probe-verdict";
 
-export const probeData = raw as unknown as ProbeData;
+const loaded = raw as unknown as ProbeData;
+
+export const probeData: ProbeData = {
+  ...loaded,
+  results: loaded.results.map((result) => ({
+    ...result,
+    verdict: remapHistoryVerdict(result.slug, result.status, result.verdict),
+  })),
+  history: loaded.history.map(remapHistoryDay),
+};
 
 export function getProbe(slug: string): ProbeResult | undefined {
   return probeData.results.find((r) => r.slug === slug);
@@ -33,6 +47,7 @@ export const verdictMeta: Record<
   ok: { label: "răspunde", tone: "success" },
   blocked: { label: "refuză clienți automați", tone: "warning" },
   tls: { label: "TLS neverificabil pentru clienți stricți", tone: "warning" },
+  unreachable: { label: "proba nu a ajuns", tone: "warning" },
   down: { label: "nu răspunde", tone: "danger" },
 };
 
@@ -43,26 +58,32 @@ export function probeSummary(result: ProbeResult): string {
   if (result.verdict === "blocked") {
     return `${result.status} · ${verdictMeta.blocked.label}`;
   }
-  if (result.verdict === "tls") return verdictMeta.tls.label;
+  if (result.verdict === "tls") {
+    return result.error
+      ? `${verdictMeta.tls.label} · ${result.error}`
+      : verdictMeta.tls.label;
+  }
+  if (result.verdict === "unreachable") {
+    const detail = result.error || (result.status ? String(result.status) : "");
+    return detail
+      ? `${verdictMeta.unreachable.label} · ${detail}`
+      : verdictMeta.unreachable.label;
+  }
   return `${verdictMeta.down.label}${result.error ? ` · ${result.error}` : ""}`;
 }
 
 export function probeHeaderState() {
-  const results = probeData.results;
-  const down = results.filter((r) => r.verdict === "down").length;
-  const warn = results.filter(
-    (r) => r.verdict === "tls" || r.verdict === "blocked",
-  ).length;
-  const answered = results.filter(
-    (r) => r.verdict === "ok" || r.verdict === "blocked",
-  ).length;
-  const tone: "success" | "warning" | "danger" =
-    down > 0 ? "danger" : warn > 0 ? "warning" : "success";
-  return {
-    tone,
-    pulse: down > 0,
-    answered,
-    total: results.length,
-    generatedAt: probeData.generatedAt,
-  };
+  return headerStateFrom(probeData.results, probeData.generatedAt);
+}
+
+export function probeHeaderLabel(): string {
+  const state = probeHeaderState();
+  const when = probeTimestamp(state.generatedAt);
+  if (state.tone === "success") {
+    return `${state.total} portaluri din catalog au răspuns probei · ultima rundă ${when}`;
+  }
+  if (state.tone === "danger") {
+    return `${state.down} din ${state.total} fără DNS sau fără rută · ultima rundă ${when}`;
+  }
+  return `Proba: ${state.answered} răspund, ${state.warn} semnale (WAF, TLS sau proba nu a ajuns) · ultima rundă ${when}`;
 }

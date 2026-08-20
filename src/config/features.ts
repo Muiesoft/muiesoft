@@ -116,7 +116,7 @@ export const features: Record<FeatureKey, FeatureDefinition> = {
     mode: "preview",
     label: "Status",
     href: "/status",
-    description: "Starea serviciilor Muiesoft.",
+    description: "Proba HTTP pe portaluri, plus starea uneltelor Muiesoft.",
   },
   changelog: {
     mode: "live",

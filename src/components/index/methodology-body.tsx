@@ -14,7 +14,7 @@ const layers = [
     title: "2. Probe și Lighthouse",
     tone: "border-success/40 bg-success/5",
     items: [
-      "Probă HTTP zilnică: status, latență, verdict. GitHub Actions, commit public.",
+      "Probă HTTP zilnică: status, latență, verdict. GitHub Actions, commit public. GET-ul din runner nu e browserul cetățeanului: unreachable înseamnă că proba nu a ajuns, nu că site-ul e mort.",
       "Snapshot Lighthouse (performance, accessibility) e ajustare, nu scorul Index. Badge pe profil.",
       "Provenance: tool, versiune, URL, dată. Fără SaaS de monitorizare.",
     ],

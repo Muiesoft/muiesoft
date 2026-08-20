@@ -1,4 +1,4 @@
-import { probeHeaderState, probeTimestamp } from "@/lib/probes";
+import { probeHeaderLabel, probeHeaderState } from "@/lib/probes";
 import { cn } from "@/lib/utils";
 
 const toneClass = {
@@ -9,7 +9,7 @@ const toneClass = {
 
 export function HeaderStatusPip() {
   const state = probeHeaderState();
-  const label = `${state.answered}/${state.total} portaluri au răspuns · ultima rundă ${probeTimestamp(state.generatedAt)}`;
+  const label = probeHeaderLabel();
 
   return (
     <span className="relative inline-flex items-center">

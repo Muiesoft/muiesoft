@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { registryServices } from "@/data/registry/services";
-import { probeData, probeTimestamp } from "@/lib/probes";
+import { catalogResults } from "@/lib/probe-verdict";
+import { probeData, probeTimestamp, verdictMeta } from "@/lib/probes";
 
 export function StatusStrip() {
   const ok = registryServices.filter((s) => s.status === "operational").length;
@@ -9,9 +10,12 @@ export function StatusStrip() {
     (s) => s.status === "physical-required",
   ).length;
   const total = registryServices.length;
-  const withHttp = probeData.results.filter(
+  const catalog = catalogResults(probeData.results);
+  const answered = catalog.filter(
     (r) => r.verdict === "ok" || r.verdict === "blocked",
   ).length;
+  const unreachable = catalog.filter((r) => r.verdict === "unreachable").length;
+  const down = catalog.filter((r) => r.verdict === "down").length;
 
   return (
     <section className="border-b border-border bg-surface px-4 py-6 md:px-8">
@@ -19,10 +23,10 @@ export function StatusStrip() {
         <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 className="font-mono text-xs tracking-[0.16em] text-acid uppercase">
-              Status registry
+              Catalog UX
             </h2>
             <p className="mt-2 font-mono text-sm tracking-wide uppercase">
-              {total} portaluri în catalog
+              {total} portaluri etichetate în registry
             </p>
           </div>
           <dl className="grid grid-cols-3 gap-6 md:gap-10">
@@ -47,15 +51,19 @@ export function StatusStrip() {
           </dl>
         </div>
         <p className="font-mono text-xs leading-relaxed text-muted">
-          Stare catalog pe UX tipic · monitorizare HTTP zilnică · ultima rundă:{" "}
-          {withHttp}/{probeData.results.length} au răspuns ·{" "}
+          Cifrele de mai sus sunt etichete de UX din catalog, nu proba HTTP.{" "}
+          Proba pe catalog: {answered}/{catalog.length} au răspuns runner-ului
+          {unreachable > 0
+            ? ` · ${unreachable} ${verdictMeta.unreachable.label}`
+            : ""}
+          {down > 0 ? ` · ${down} ${verdictMeta.down.label}` : ""} ·{" "}
           {probeTimestamp(probeData.generatedAt)} ·{" "}
-          <Link href="/muie-index" className="text-acid hover:underline">
-            Muie Index
+          <Link href="/status" className="text-acid hover:underline">
+            Status
           </Link>
           {" · "}
-          <Link href="/status" className="text-acid hover:underline">
-            STATUS
+          <Link href="/muie-index" className="text-acid hover:underline">
+            Muie Index
           </Link>
           {" · "}
           <Link href="/feed.xml" className="text-acid hover:underline">

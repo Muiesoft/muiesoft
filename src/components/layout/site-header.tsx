@@ -52,7 +52,7 @@ export function SiteHeader({ status }: { status: ReactNode }) {
             <Link
               href="/status"
               className="inline-flex items-center gap-2 font-mono text-xs tracking-[0.08em] text-foreground"
-              title="Starea portalurilor publice, din proba HTTP zilnică"
+              title="Proba HTTP pe portalurile din catalog"
             >
               {status}
               Status

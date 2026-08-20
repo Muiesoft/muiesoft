@@ -68,6 +68,37 @@ describe("computeMuieScore", () => {
     expect(frictionTone(50)).toBe("warning");
     expect(frictionTone(90)).toBe("danger");
   });
+
+  it("does not add friction for unreachable", () => {
+    const base = computeMuieScore({
+      status: "operational",
+      score: dims(10),
+      incidentCount: 0,
+    });
+    const unreachable = computeMuieScore({
+      status: "operational",
+      score: dims(10),
+      incidentCount: 0,
+      probeVerdict: "unreachable",
+    });
+    expect(unreachable).toBe(base);
+  });
+
+  it("adds more friction for down than unreachable", () => {
+    const unreachable = computeMuieScore({
+      status: "operational",
+      score: dims(40),
+      incidentCount: 0,
+      probeVerdict: "unreachable",
+    });
+    const down = computeMuieScore({
+      status: "operational",
+      score: dims(40),
+      incidentCount: 0,
+      probeVerdict: "down",
+    });
+    expect(down).toBeGreaterThan(unreachable);
+  });
 });
 
 describe("friction ranking", () => {

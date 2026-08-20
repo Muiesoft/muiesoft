@@ -65,7 +65,7 @@ Route loading (`app/loading.tsx`) folosește `<StampLoader />` + mesaje din `bra
 
 ## Ce e real azi
 
-- Probe HTTP zilnice pe portalurile din registry (`probes.json`, GH Actions)
+- Probe HTTP pe portalurile din registry (`probes.json`; cron GitHub Actions). Timeout din runner ≠ site mort.
 - Snapshot-uri Lighthouse pe zeci de portaluri (pe profilul instituției)
 - Incidente documentate din surse publice (feed pe homepage + `/muie-index?tab=incidente`)
 - MuieLex / proceduri / 544 cu surse oficiale unde e marcat ca atare

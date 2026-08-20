@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { registryIncidents } from "@/data/registry/incidents";
 import type { InstitutionRankingEntry } from "@/domain/institution";
 import type { ProbeVerdict } from "@/domain/probe";
-import { probeData, probeAgo } from "@/lib/probes";
+import { probeData, probeAgo, verdictMeta } from "@/lib/probes";
 import { FRICTION_DIMENSIONS, frictionToneClass } from "@/lib/scoring";
 import { cn } from "@/lib/utils";
 
@@ -18,6 +18,7 @@ const dotClass: Record<ProbeVerdict, string> = {
   ok: "bg-success",
   blocked: "bg-warning",
   tls: "bg-warning",
+  unreachable: "bg-warning",
   down: "bg-danger",
 };
 
@@ -279,8 +280,8 @@ export function MuieIndexClient({
               Probă HTTP zilnică pe fiecare portal din registry, rulată din
               GitHub Actions și commitată public. {probeData.history.length}{" "}
               {probeData.history.length === 1 ? "zi înregistrată" : "zile înregistrate"}
-              , ultima {probeAgo(probeData.generatedAt)}. Un GET pe zi e semnal,
-              nu uptime complet.
+              , ultima {probeAgo(probeData.generatedAt)}. Un GET pe runner e
+              semnal, nu uptime de cetățean. Timeout nu e „nu răspunde”.
             </p>
             <div className="overflow-x-auto border border-border bg-surface">
               <table className="w-full text-left font-mono text-xs">
@@ -313,17 +314,18 @@ export function MuieIndexClient({
                           <span className="flex gap-1">
                             {days.map((day) => {
                               const entry = day.services[item.slug];
+                              const verdict = entry?.[2];
                               return (
                                 <span
                                   key={day.date}
                                   title={
                                     entry
-                                      ? `${day.date}: ${entry[0] || entry[2]} · ${entry[1]}ms`
+                                      ? `${day.date}: ${entry[0] || verdict} · ${entry[1]}ms`
                                       : `${day.date}: fără probă`
                                   }
                                   className={cn(
                                     "inline-block h-3 w-3",
-                                    entry ? dotClass[entry[2]] : "bg-border",
+                                    verdict ? dotClass[verdict] : "bg-border",
                                   )}
                                 />
                               );
@@ -334,7 +336,7 @@ export function MuieIndexClient({
                           {latest
                             ? latest.verdict === "ok"
                               ? `${latest.status} · ${latest.latencyMs}ms`
-                              : latest.verdict
+                              : verdictMeta[latest.verdict].label
                             : "n/a"}
                         </td>
                       </tr>
@@ -345,8 +347,9 @@ export function MuieIndexClient({
               <p className="border-t border-border px-4 py-3 font-mono text-[10px] text-muted">
                 <span className="text-success">■</span> răspunde ·{" "}
                 <span className="text-warning">■</span> refuză clienți automați
-                / TLS neverificabil · <span className="text-danger">■</span> nu
-                răspunde · seria crește cu o zi la fiecare rulare
+                / TLS / proba nu a ajuns ·{" "}
+                <span className="text-danger">■</span> nu răspunde (DNS sau
+                fără rută) · seria crește cu o zi la fiecare rulare
               </p>
             </div>
             <p className="text-sm text-muted">

@@ -86,7 +86,12 @@ paths:
                 $ref: "#/components/schemas/Envelope"
   /probes:
     get:
-      summary: Latest daily HTTP probe per portal
+      summary: Latest HTTP probe per portal
+      description: >
+        Verdicts: ok (2xx/3xx), blocked (403/429/503), tls (untrusted cert),
+        unreachable (timeout/RST from the runner, not a claim that citizens
+        cannot open the site), down (DNS or no route). Daily run is GitHub
+        Actions; origin=adhoc is off-cron. Not full uptime.
       responses:
         "200":
           description: OK
