@@ -1,13 +1,15 @@
 import { institutionRepository } from "@/adapters/demo/institution";
 import { MuieIndexClient } from "@/components/index/muie-index-client";
 import { PageHero } from "@/components/shared/page-hero";
+import { brandCopy } from "@/config/copy";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Muie Index · portaluri publice din România",
   description:
-    "Catalog și evaluări pentru portalurile publice din România: disponibilitate, UX, accesibilitate. Estimările sunt etichetate; snapshot-urile Lighthouse apar pe profiluri.",
+    "Scor mare = mai multă coadă. Catalog de frecare pentru portalurile publice din România. Estimările sunt etichetate; probele HTTP și Lighthouse apar pe profiluri.",
   path: "/muie-index",
+  ogImage: "/muie-index/opengraph-image",
 });
 
 type Props = {
@@ -23,14 +25,16 @@ export default async function MuieIndexPage({ searchParams }: Props) {
     <>
       <PageHero
         feature="muieIndex"
-        title="MUIEINDEX"
+        title="Muie Index"
         subtitle={
           <>
-            <p>Uzabilitate, interoperabilitate, eficiență: pe scoruri etichetate.</p>
+            <p>
+              M.U.I.E. e {brandCopy.acronym}. Indicele e de frecare: 100 e
+              ghișeul etern, 0 e timpul înapoi.
+            </p>
             <p className="mt-4 text-foreground">
-              Nu inventăm uptime.
-              <br />
-              Până la probe automate, scorurile sunt estimări de utilizatori.
+              Scor mare înseamnă mai multă coadă pentru tine. Nu e NPS. Nu e
+              popularitate.
             </p>
           </>
         }

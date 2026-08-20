@@ -2,9 +2,9 @@ import { expect, test } from "@playwright/test";
 
 test("homepage loads", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { name: "MUIESOFT" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Muiesoft" })).toBeVisible();
   await expect(
-    page.locator("main").getByText("Toată hula", { exact: false }).first(),
+    page.locator("main").getByText("Cetățean privat", { exact: false }).first(),
   ).toBeVisible();
   await expect(
     page.getByRole("link", {
@@ -15,7 +15,7 @@ test("homepage loads", async ({ page }) => {
 
 test("navigate to MuieLex", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("link", { name: "MUIELEX" }).first().click();
+  await page.getByRole("link", { name: "MuieLex" }).first().click();
   await expect(page).toHaveURL(/\/lex/);
   await expect(
     page.getByRole("heading", { name: "MuieLex", exact: true }),
@@ -39,7 +39,7 @@ test("search Legea 544", async ({ page }) => {
 
 test("navigate to MuieIndex", async ({ page }) => {
   await page.goto("/muie-index");
-  await expect(page.getByRole("heading", { name: "MUIEINDEX" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Muie Index" })).toBeVisible();
   await expect(page.getByTestId("institution-card").first()).toBeVisible();
 });
 
@@ -63,7 +63,7 @@ test("mobile menu", async ({ page }) => {
   ).toBeVisible();
   await expect(
     page.getByRole("navigation", { name: "Meniu mobil" }).getByRole("link", {
-      name: "MUIEINDEX",
+      name: "Muie Index",
     }),
   ).toBeVisible();
 });
@@ -93,6 +93,24 @@ test("feed xml", async ({ request }) => {
   const body = await res.text();
   expect(body).toContain("<rss");
   expect(body).toContain("Muiesoft");
+});
+
+test("metodologie page", async ({ page }) => {
+  await page.goto("/metodologie");
+  await expect(page.getByRole("heading", { name: "Metodologie" })).toBeVisible();
+  await expect(page.getByText("Indicele e de frecare", { exact: false })).toBeVisible();
+});
+
+test("competenta redirects to premii", async ({ page }) => {
+  await page.goto("/competenta");
+  await expect(page).toHaveURL(/\/premii/);
+});
+
+test("contribuie links RSS", async ({ page }) => {
+  await page.goto("/contribuie");
+  await expect(
+    page.getByRole("link", { name: /RSS/i }).first(),
+  ).toBeVisible();
 });
 
 test("keyboard command palette", async ({ page }) => {

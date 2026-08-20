@@ -20,7 +20,7 @@ export function BrandMark({
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/brand/logo-512.png"
+      src="/brand/logo.svg"
       alt="Muiesoft"
       width={512}
       height={512}

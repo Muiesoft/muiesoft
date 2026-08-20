@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useSyncExternalStore } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -90,17 +90,6 @@ export function CookieConsent() {
     isClient && (snapshot.forcedOpen || snapshot.saved === null);
   const showDetails = userExpanded ?? snapshot.forcedOpen;
 
-  useEffect(() => {
-    if (!visible) {
-      delete document.documentElement.dataset.cookieBanner;
-      return;
-    }
-    document.documentElement.dataset.cookieBanner = "";
-    return () => {
-      delete document.documentElement.dataset.cookieBanner;
-    };
-  }, [visible]);
-
   if (!visible) return null;
 
   const persist = (next: CookiePreferences) => {
@@ -133,7 +122,7 @@ export function CookieConsent() {
             </div>
             <h2
               id="cookie-title"
-              className="font-display mt-3 text-xl font-bold uppercase md:text-2xl"
+              className="font-display mt-3 text-xl font-semibold md:text-2xl"
             >
               Preferințe cookie. Fără tracking.
             </h2>

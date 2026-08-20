@@ -51,11 +51,19 @@ export function StatusStrip() {
           {withHttp}/{probeData.results.length} au răspuns ·{" "}
           {probeTimestamp(probeData.generatedAt)} ·{" "}
           <Link href="/muie-index" className="text-acid hover:underline">
-            MUIEINDEX
+            Muie Index
           </Link>
           {" · "}
           <Link href="/status" className="text-acid hover:underline">
             STATUS
+          </Link>
+          {" · "}
+          <Link href="/feed.xml" className="text-acid hover:underline">
+            RSS
+          </Link>
+          {" · "}
+          <Link href="/api" className="text-acid hover:underline">
+            API
           </Link>
         </p>
       </div>

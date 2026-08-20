@@ -13,11 +13,11 @@ export function SiteFooter() {
         <div className="md:col-span-1">
           <div className="flex items-center gap-3">
             <BrandMark size="md" />
-            <p className="font-display text-2xl font-bold tracking-tight uppercase">
-              MUIESOFT
+            <p className="font-display text-2xl font-semibold tracking-tight">
+              Muiesoft
             </p>
           </div>
-          <p className="mt-3 max-w-xs text-sm text-muted">{siteConfig.slogan}.</p>
+          <p className="mt-3 max-w-xs text-sm text-muted">{siteConfig.slogan}</p>
           <div className="mt-4 flex gap-4">
             <a
               href={siteConfig.github}

@@ -10,17 +10,27 @@ export const metadata = buildMetadata({
   path: "/rezolva",
 });
 
-export default async function RezolvaPage() {
+type Props = {
+  searchParams: Promise<{ q?: string | string[] }>;
+};
+
+export default async function RezolvaPage({ searchParams }: Props) {
+  const params = await searchParams;
+  const raw = params.q;
+  const initialQuery = (Array.isArray(raw) ? raw[0] : raw)?.trim() ?? "";
   const procedures = await procedureRepository.getProcedures();
 
   return (
     <>
       <PageHero
         feature="rezolva"
-        title="Rezolvă-mi dracu problema."
+        title="Rezolvă"
         subtitle="Spui ce vrei să faci. Pași, documente, termene și instituții, cu link către sursele oficiale. Ghid orientativ, nu consultanță."
       />
-      <RezolvaPageClient procedures={procedures} />
+      <RezolvaPageClient
+        procedures={procedures}
+        initialQuery={initialQuery}
+      />
     </>
   );
 }

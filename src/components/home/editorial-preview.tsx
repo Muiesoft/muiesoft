@@ -26,7 +26,7 @@ export function EditorialPreview() {
           <p className="font-mono text-[10px] tracking-wider text-acid uppercase">
             Merge La Mine™ · featured
           </p>
-          <h3 className="font-display mt-2 text-2xl uppercase md:text-3xl">
+          <h3 className="font-display mt-2 text-2xl md:text-3xl">
             {featured.title}
           </h3>
           <p className="mt-3 max-w-2xl text-sm text-muted">

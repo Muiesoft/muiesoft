@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CiteBlock } from "@/components/shared/cite-block";
 import { DemoBadge } from "@/components/shared/demo-badge";
 import { Badge } from "@/components/ui/badge";
 import { getIncident, registryIncidents } from "@/data/registry/incidents";
@@ -40,7 +41,7 @@ export default async function IncidentPage({ params }: Props) {
           <Badge variant="live">SURSE PUBLICE</Badge>
         )}
       </div>
-      <h1 className="font-display mt-6 text-4xl font-bold uppercase md:text-5xl">
+      <h1 className="font-display mt-6 text-4xl font-semibold md:text-5xl">
         {incident.title}
       </h1>
       <p className="mt-3 font-mono text-xs text-muted">{incident.when}</p>
@@ -91,6 +92,10 @@ export default async function IncidentPage({ params }: Props) {
           </ul>
         </section>
       ) : null}
+      <CiteBlock
+        title={incident.title}
+        path={`/muie-index/incidente/${incident.id}`}
+      />
       <p className="mt-10">
         <Link
           href="/muie-index"

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { BrandMark } from "@/components/brand/brand-mark";
@@ -8,7 +9,7 @@ import { mainNav } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-export function SiteHeader() {
+export function SiteHeader({ status }: { status: ReactNode }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -24,13 +25,13 @@ export function SiteHeader() {
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 md:h-16 md:px-8">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 font-display text-lg font-bold tracking-[0.08em] uppercase"
+            className="inline-flex items-center gap-2 font-display text-lg font-semibold tracking-tight"
             aria-label="Muiesoft acasă"
           >
             <BrandMark size="sm" />
             <span>
-              MUIE
-              <span className="text-acid">SOFT</span>
+              Muie
+              <span className="text-acid">soft</span>
             </span>
           </Link>
 
@@ -43,47 +44,31 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 title={item.title}
-                className="font-mono text-xs tracking-[0.14em] text-muted uppercase transition-colors hover:text-foreground"
+                className="font-mono text-xs tracking-[0.08em] text-muted transition-colors hover:text-foreground"
               >
                 {item.label}
               </Link>
             ))}
             <Link
               href="/status"
-              className="inline-flex items-center gap-2 font-mono text-xs tracking-[0.14em] text-foreground uppercase"
+              className="inline-flex items-center gap-2 font-mono text-xs tracking-[0.08em] text-foreground"
+              title="Starea portalurilor publice, din proba HTTP zilnică"
             >
-              <span
-                className="status-pulse inline-block h-2 w-2 rounded-full bg-acid"
-                aria-hidden
-              />
-              STATUS
-            </Link>
-            <Link
-              href="/login"
-              className="border border-border px-3 py-2 font-mono text-xs tracking-[0.14em] text-foreground uppercase transition-colors hover:border-acid"
-            >
-              Intră
+              {status}
+              Status
             </Link>
           </nav>
 
-          <div className="flex items-center gap-2 lg:hidden">
-            <Link
-              href="/login"
-              className="inline-flex h-11 items-center justify-center border border-border px-3 font-mono text-xs tracking-[0.14em] uppercase"
-            >
-              Intră
-            </Link>
-            <button
-              type="button"
-              className="inline-flex h-11 w-11 items-center justify-center border border-border"
-              aria-expanded={open}
-              aria-controls="mobile-menu"
-              aria-label={open ? "Închide meniul" : "Deschide meniul"}
-              onClick={() => setOpen((v) => !v)}
-            >
-              {open ? <X size={20} /> : <Menu size={20} />}
-            </button>
-          </div>
+          <button
+            type="button"
+            className="inline-flex h-11 w-11 items-center justify-center border border-border lg:hidden"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "Închide meniul" : "Deschide meniul"}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
       </header>
 
@@ -103,7 +88,7 @@ export function SiteHeader() {
               key={item.href}
               href={item.href}
               title={item.title}
-              className="font-display text-2xl font-bold uppercase"
+              className="font-display text-2xl font-semibold"
               onClick={() => setOpen(false)}
             >
               {item.label}
@@ -111,21 +96,15 @@ export function SiteHeader() {
           ))}
           <Link
             href="/status"
-            className="font-display text-2xl font-bold text-acid uppercase"
+            className="font-display text-2xl font-semibold text-acid"
             onClick={() => setOpen(false)}
           >
-            STATUS
-          </Link>
-          <Link
-            href="/login"
-            className="font-display text-2xl font-bold uppercase"
-            onClick={() => setOpen(false)}
-          >
-            LOGIN
+            <span className="mr-2 inline-flex items-center">{status}</span>
+            Status
           </Link>
           <Link
             href="/manifest"
-            className="mt-2 font-mono text-sm text-muted uppercase"
+            className="mt-2 font-mono text-sm text-muted"
             onClick={() => setOpen(false)}
           >
             Manifest

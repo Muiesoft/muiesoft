@@ -17,7 +17,7 @@ Reguli pentru agenții AI care modifică Muiesoft.
    - `pnpm build`
 10. Orice claim real-world nou necesită provenance (`SourceReference`).
 11. Nu elimina metadata de sursă.
-12. Brandul rămâne brutal, dar inteligent. Vulgaritatea e punchline, nu filler.
+12. Brandul e tăios și ironic. MUIE e numele, nu vocabularul. O glumă pe ecran, nu pe fiecare linie. Dacă un adolescent ar râde doar de înjurătură, rescrie.
 13. Nu inventa statistici despre ANAF, ministere, contracte sau persoane reale.
 14. `OUTLIER ≠ CORUPȚIE`. `ANOMALIE ≠ VINOVĂȚIE`.
 15. Nu hardcoda URL-uri; folosește `siteConfig`.

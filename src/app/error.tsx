@@ -13,8 +13,8 @@ export default function Error({
       <p className="font-mono text-xs tracking-[0.2em] text-danger uppercase">
         500
       </p>
-      <h1 className="font-display mt-4 text-4xl font-bold uppercase md:text-6xl">
-        Ceva s-a futut.
+      <h1 className="font-display mt-4 text-4xl font-semibold md:text-6xl">
+        Ceva s-a rupt.
       </h1>
       <p className="mt-6 text-lg text-muted">
         De data asta la noi.

@@ -3,8 +3,8 @@ import type { Award } from "@/domain/award";
 export const demoAwards: Award[] = [
   {
     id: "a1",
-    slug: "pula-de-plumb",
-    name: "Pula de Plumb pentru Excelență Digitală",
+    slug: "stampila-de-plumb",
+    name: "Ștampila de Plumb pentru Excelență Digitală",
     description:
       "Pentru realizări remarcabile în transformarea Internetului în ghișeu.",
     category: "absurd",
@@ -44,8 +44,8 @@ export const demoAwards: Award[] = [
   },
   {
     id: "a5",
-    slug: "pula-de-aur-claritate",
-    name: "Pula de Aur pentru Claritate Legislativă",
+    slug: "stampila-de-aur-claritate",
+    name: "Ștampila de Aur pentru Claritate Legislativă",
     description: "Pentru articolul pe care nici autorul nu-l mai poate explica.",
     category: "absurd",
     status: "unawarded",
@@ -73,8 +73,8 @@ export const demoAwards: Award[] = [
   },
   {
     id: "a8",
-    slug: "nicio-pula-bravo",
-    name: "Nicio Pulă, Bravo",
+    slug: "nicio-scuza-bravo",
+    name: "Nicio scuză. Bravo.",
     description: "Pentru instituția care a făcut ceva efectiv competent.",
     category: "competence",
     status: "unawarded",

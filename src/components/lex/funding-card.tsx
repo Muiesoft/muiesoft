@@ -6,11 +6,9 @@ export function AvocatulPuliiFundingCard() {
     <div className="border border-border bg-surface p-6" data-testid="avocat-funding">
       <div className="flex flex-wrap gap-2">
         <Badge variant="planned">CROWDFUNDING</Badge>
-        <Badge variant="preview">AVOCATUL PULII</Badge>
+        <Badge variant="preview">ÎNTREABĂ MUIELEX</Badge>
       </div>
-      <h3 className="font-display mt-4 text-2xl uppercase">
-        Benzină pentru AI
-      </h3>
+      <h3 className="font-display mt-4 text-2xl">Benzină pentru AI</h3>
       <p className="mt-4 font-mono text-3xl text-acid">€0 / €8.000</p>
       <p className="mt-4 text-sm text-muted">
         Întrebările rămân gratuite.

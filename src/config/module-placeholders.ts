@@ -72,7 +72,7 @@ export const modulePlaceholders: Record<
     how: "Raportare structurată: pași, browser, timestamp, URL, captură, status.",
     demoSteps: [
       "Listă de incidente documentate din surse publice",
-      "Status MERGE CA PULA / DEGRADAT",
+      "Status NU MERGE / DEGRADAT",
       "Câmpuri pentru pași, URL și captură",
     ],
     architecture: [
@@ -158,7 +158,7 @@ export const modulePlaceholders: Record<
       "Mai multe proceduri, citări pe pas, sync automat când se schimbă legea.",
     roadmap: [
       "Phase 6: machine-readable administration",
-      "Phase 6: Rezolvă-mi dracu problema",
+      "Phase 6: Rezolvă",
     ],
     help: "Documentează o procedură cu surse oficiale, nu din auzite.",
   },
@@ -192,7 +192,7 @@ export const modulePlaceholders: Record<
   },
   "muieLex.ai": {
     id: "modul-rezervat-avocat",
-    title: "Avocatul Pulii",
+    title: "Întreabă MuieLex",
     problem:
       "Oamenii întreabă legea pe românește. Răspunsul trebuie să citeze, nu să inventeze.",
     how: "Retrieval din surse → confidence gate → răspuns sau refuz.",
@@ -400,7 +400,7 @@ export const modulePlaceholders: Record<
     missing: "Cazuri reale documentate și proces de review.",
     roadmap: [
       "Criterii publice",
-      "Feed Nicio Muie",
+      "Feed Când merge",
     ],
     help: "Trimite un exemplu pozitiv cu surse, nu PR.",
     comingSoon: {

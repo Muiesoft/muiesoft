@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
-export const alt = "Muiesoft · Civic-tech pentru o Românie transparentă";
+export const alt = "Muiesoft · Cetățean privat. Stat transparent.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -55,20 +55,19 @@ export default async function OpenGraphImage() {
           <div
             style={{
               display: "flex",
-              fontSize: 64,
-              fontWeight: 800,
-              lineHeight: 0.95,
-              textTransform: "uppercase",
+              fontSize: 52,
+              fontWeight: 700,
+              lineHeight: 1.1,
               maxWidth: 980,
             }}
           >
-            Civic-tech pentru o Românie transparentă
+            Muiesoft măsoară administrația digitală. Construiește alternative.
           </div>
           <div
             style={{
               display: "flex",
               fontSize: 28,
-              color: "#c6ff00",
+              color: "#f2c14e",
               marginTop: 24,
             }}
           >

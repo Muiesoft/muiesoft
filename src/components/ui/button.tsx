@@ -11,7 +11,7 @@ const variants: Record<Variant, string> = {
   ghost: "bg-transparent text-muted border-transparent hover:text-foreground",
   danger: "bg-transparent text-danger border-danger hover:bg-danger hover:text-background",
   invert:
-    "bg-background text-acid border-background hover:bg-foreground hover:text-background",
+    "bg-background text-acid border-background hover:bg-acid hover:text-background",
 };
 
 const base =

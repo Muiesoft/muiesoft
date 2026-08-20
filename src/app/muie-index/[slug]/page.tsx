@@ -1,13 +1,18 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { institutionRepository } from "@/adapters/demo/institution";
+import { FrictionScore } from "@/components/index/friction-score";
 import { ProbeStatus } from "@/components/index/probe-status";
+import { JsonLdBlock } from "@/components/seo/json-ld-block";
+import { CiteBlock } from "@/components/shared/cite-block";
 import { DemoBadge } from "@/components/shared/demo-badge";
 import { Badge } from "@/components/ui/badge";
+import { siteConfig } from "@/config/site";
 import { getIncidentsForService } from "@/data/registry/incidents";
 import { getLighthouseSnapshot } from "@/data/registry/lighthouse-snapshots";
 import { buildFreedom544Href } from "@/lib/freedom544";
 import { getProbe, probeSummary, verdictMeta } from "@/lib/probes";
+import { FRICTION_DIMENSIONS } from "@/lib/scoring";
 import { buildMetadata } from "@/lib/seo";
 
 type Props = {
@@ -34,6 +39,7 @@ export async function generateMetadata({ params }: Props) {
       institution.summary ??
       "Profil în Muie Index. Estimări etichetate clar când nu sunt măsurători.",
     path: `/muie-index/${slug}`,
+    ogImage: `/muie-index/${slug}/opengraph-image`,
   });
 }
 
@@ -56,27 +62,40 @@ export default async function InstitutionProfilePage({ params }: Props) {
   const institution = await institutionRepository.getInstitution(slug);
   if (!institution) notFound();
 
-  const metrics = [
-    ["UX", institution.score?.usability],
-    ["UPTIME*", institution.score?.reliability],
-    ["MOBILE", institution.score?.mobile],
-    ["ACCESSIBILITY", institution.score?.accessibility],
-    ["INTEROP", institution.score?.interoperability],
-    ["TRANSPARENCY", institution.score?.transparency],
-    ["BUREAUCRACY", institution.score?.bureaucracy],
-  ];
+  const metrics = FRICTION_DIMENSIONS.map(
+    ([label, key]) => [label, institution.score?.[key]] as const,
+  );
   const incidents = getIncidentsForService(institution.slug);
   const lighthouse = getLighthouseSnapshot(institution.slug);
   const probe = getProbe(institution.slug);
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-14 md:px-8">
+      <JsonLdBlock
+        data={{
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Muie Index",
+              item: `${siteConfig.url}/muie-index`,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: institution.name,
+              item: `${siteConfig.url}/muie-index/${institution.slug}`,
+            },
+          ],
+        }}
+      />
       <p className="terminal-label">MUIE INDEX / PROFIL</p>
       <div className="mt-4 flex flex-wrap gap-2">
         {scoreBadge(institution.scoreKind)}
         {institution.demo ? <DemoBadge /> : null}
       </div>
-      <h1 className="font-display mt-6 text-4xl font-bold uppercase md:text-6xl">
+      <h1 className="font-display mt-6 text-4xl font-semibold md:text-5xl">
         {institution.name}
       </h1>
       <p className="mt-3 text-muted">
@@ -102,10 +121,11 @@ export default async function InstitutionProfilePage({ params }: Props) {
       ) : null}
 
       <div className="mt-10 border border-border bg-surface p-6">
-        <p className="terminal-label">Muie Score</p>
-        <p className="mt-2 font-mono text-6xl text-acid">
-          {institution.score?.total ?? "n/a"}
-        </p>
+        <FrictionScore
+          total={institution.score?.total}
+          name={institution.name}
+          size="lg"
+        />
         {institution.scoreNote ? (
           <p className="mt-4 text-sm text-muted">{institution.scoreNote}</p>
         ) : null}
@@ -113,8 +133,8 @@ export default async function InstitutionProfilePage({ params }: Props) {
           <ProbeStatus slug={institution.slug} />
         </div>
         <p className="mt-2 text-xs text-muted">
-          * Scorul UPTIME e estimare de sentiment. Proba HTTP zilnică de mai
-          sus e semnal măsurat separat, cu istoric în tab-ul Istoric.
+          Căderea e frecare estimată. Proba HTTP de mai sus e semnal măsurat
+          separat, cu istoric în tab-ul Istoric.
         </p>
         <p className="mt-6">
           <Link
@@ -126,6 +146,20 @@ export default async function InstitutionProfilePage({ params }: Props) {
             className="font-mono text-xs tracking-wider text-acid uppercase underline-offset-2 hover:underline"
           >
             Cere SLA / disponibilitate cu 544
+          </Link>
+        </p>
+        <p className="mt-3 flex flex-wrap gap-4">
+          <Link
+            href={`/rezolva?q=${encodeURIComponent(institution.name)}`}
+            className="font-mono text-xs tracking-wider text-acid uppercase underline-offset-2 hover:underline"
+          >
+            Proceduri
+          </Link>
+          <Link
+            href={`/bani?q=${encodeURIComponent(institution.name)}`}
+            className="font-mono text-xs tracking-wider text-acid uppercase underline-offset-2 hover:underline"
+          >
+            Contracte
           </Link>
         </p>
       </div>
@@ -144,6 +178,7 @@ export default async function InstitutionProfilePage({ params }: Props) {
           <div className="flex flex-wrap items-center gap-2">
             <p className="terminal-label">Snapshot Lighthouse</p>
             <Badge variant="live">PROBE ONE-OFF</Badge>
+            <Badge variant="warning">NU E SCORUL INDEX</Badge>
           </div>
           <p className="mt-3 text-sm text-muted">{lighthouse.note}</p>
           <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
@@ -249,6 +284,11 @@ export default async function InstitutionProfilePage({ params }: Props) {
           ))}
         </ul>
       </section>
+
+      <CiteBlock
+        title={institution.name}
+        path={`/muie-index/${institution.slug}`}
+      />
 
       <p className="mt-10">
         <Link

@@ -79,7 +79,7 @@ export function LawDetail({ law }: { law: LegalDocument }) {
           </Badge>
         </div>
       )}
-      <h1 className="font-display text-4xl leading-tight font-bold uppercase md:text-5xl">
+      <h1 className="font-display text-4xl leading-tight font-semibold md:text-5xl">
         {law.title}
       </h1>
       <p className="mt-3 font-mono text-sm text-muted">
@@ -183,7 +183,7 @@ export function LawDetail({ law }: { law: LegalDocument }) {
               ))}
               {isDemo ? (
                 <div className="border border-border p-5">
-                  <p className="terminal-label">Bullshit Translator</p>
+                  <p className="terminal-label">Traducător de digitalizare</p>
                   <p className="mt-3 text-sm text-muted">Original:</p>
                   <p className="mt-1 text-sm">
                     „Prin derogare de la prevederile...”
@@ -294,7 +294,7 @@ export function LawDetail({ law }: { law: LegalDocument }) {
             <div className="border border-border p-5">
               <p className="terminal-label">
                 {isDemo
-                  ? "Cine a futut articolul ăsta?"
+                  ? "Cine a schimbat articolul ăsta?"
                   : "Versiuni în catalog"}
               </p>
               <div className="mt-6 font-mono text-sm leading-8">

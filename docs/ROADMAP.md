@@ -1,13 +1,10 @@
 # Roadmap
 
-## Phase 0 — current V1
+## Phase 0 — ce e viu
 
-- brand
-- site
-- architecture
-- preview products
-- community entry points
-- methodology scaffolding
+- Muie Index: registry, probe HTTP, Lighthouse, incidente cu surse
+- Legea 544: generator pe care un cetățean îl poate folosi azi
+- Misiune, metodologie, transparență, contribuție pe roluri
 
 ## Phase 1 — Muie Index
 
@@ -25,7 +22,7 @@
 - citations
 - diff
 
-## Phase 3 — MuieLex AI
+## Phase 3 — Întreabă MuieLex
 
 - RAG
 - evidence verification
@@ -48,7 +45,7 @@
 ## Phase 6 — Procedures
 
 - machine-readable administration
-- Rezolvă-mi dracu problema
+- Rezolvă
 
 ## Phase 7 — romania.api
 

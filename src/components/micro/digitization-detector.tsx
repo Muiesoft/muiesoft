@@ -68,7 +68,7 @@ export function DigitizationDetector() {
             ? "Felicitări. Ați pus un PDF pe Internet."
             : score < 70
               ? "E online, dar tot te urăște."
-              : "Surprinzător de puțin futut. Verifică de două ori."}
+              : "Surprinzător de puțin dureros. Verifică de două ori."}
         </p>
       </div>
     </div>

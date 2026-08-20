@@ -44,7 +44,7 @@ export function RezolvaPreview({ procedures }: RezolvaPreviewProps) {
       <div className="mb-4 flex flex-wrap items-center gap-3">
         <SectionLabel className="mb-0">REZOLVĂ</SectionLabel>
       </div>
-      <SectionHeading>Rezolvă-mi dracu problema.</SectionHeading>
+      <SectionHeading>Rezolvă</SectionHeading>
       <label htmlFor="home-rezolva" className="sr-only">
         Ce vrei să faci?
       </label>

@@ -1,4 +1,5 @@
 import { PageHero } from "@/components/shared/page-hero";
+import { TrustClose } from "@/components/shared/trust-close";
 import { Badge } from "@/components/ui/badge";
 import { siteConfig } from "@/config/site";
 import { buildMetadata } from "@/lib/seo";
@@ -90,6 +91,15 @@ export default function TransparentaPage() {
             <p className="mt-3 text-sm text-muted">
               Fiecare leu intrat și fiecare leu cheltuit trebuie să poată fi
               urmărit până la documentul primar. Fără document, fără rând.
+              Indexul are altă metodologie:{" "}
+              <a href="/metodologie" className="text-acid hover:underline">
+                frecarea portalurilor
+              </a>
+              . Principiile:{" "}
+              <a href="/principii" className="text-acid hover:underline">
+                fapte înainte de acuzații
+              </a>
+              .
             </p>
           </section>
           <section className="border border-border p-6">
@@ -103,6 +113,7 @@ export default function TransparentaPage() {
           </section>
         </div>
 
+        <TrustClose />
       </div>
     </>
   );

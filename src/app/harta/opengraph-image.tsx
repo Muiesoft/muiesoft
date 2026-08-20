@@ -3,7 +3,7 @@ import romaniaMap from "@/data/registry/romania-map.json";
 import { registryServices } from "@/data/registry/services";
 import type { InstitutionStatus } from "@/domain/institution";
 
-export const alt = "Harta Națională a Muielii Digitale";
+export const alt = "Harta portalurilor";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -74,19 +74,18 @@ export default function OpenGraphImage() {
             <div
               style={{
                 display: "flex",
-                fontSize: 56,
-                fontWeight: 800,
-                lineHeight: 1,
-                textTransform: "uppercase",
+                fontSize: 48,
+                fontWeight: 700,
+                lineHeight: 1.1,
               }}
             >
-              Harta Națională a Muielii Digitale
+              Harta portalurilor
             </div>
             <div
               style={{
                 display: "flex",
                 fontSize: 24,
-                color: "#c6ff00",
+                color: "#f2c14e",
                 marginTop: 20,
               }}
             >

@@ -1,7 +1,7 @@
 {
   "name": "Muiesoft",
   "short_name": "Muiesoft",
-  "description": "Civic-tech open-source pentru o Românie în care cetățeanul este privat și statul este transparent.",
+  "description": "Cetățean privat. Stat transparent.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#050505",

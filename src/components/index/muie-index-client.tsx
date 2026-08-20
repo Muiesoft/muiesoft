@@ -2,15 +2,16 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { FrictionScore } from "@/components/index/friction-score";
+import { MethodologyBody } from "@/components/index/methodology-body";
 import { ProbeStatus } from "@/components/index/probe-status";
 import { DemoBadge } from "@/components/shared/demo-badge";
-import { ModulePlaceholder } from "@/components/shared/module-placeholder";
 import { Badge } from "@/components/ui/badge";
-import { getModulePlaceholder } from "@/config/module-placeholders";
 import { registryIncidents } from "@/data/registry/incidents";
 import type { InstitutionRankingEntry } from "@/domain/institution";
 import type { ProbeVerdict } from "@/domain/probe";
 import { probeData, probeAgo } from "@/lib/probes";
+import { FRICTION_DIMENSIONS, frictionToneClass } from "@/lib/scoring";
 import { cn } from "@/lib/utils";
 
 const dotClass: Record<ProbeVerdict, string> = {
@@ -107,10 +108,14 @@ export function MuieIndexClient({
             id={panelId("Clasament")}
             aria-labelledby={tabId("Clasament")}
           >
+            <p className="max-w-2xl text-sm text-foreground">
+              Citește de sus în jos: scorul mare e frecarea, nu lauda. 100 e
+              ghișeul etern.
+            </p>
             <p className="max-w-2xl text-sm text-muted">
               Portaluri reale din registry. Scorurile sunt etichetate{" "}
               <span className="text-warning">ESTIMARE UTILIZATORI</span>
-              : frustrări comune, nu probe Muie Index automate.
+              : frustrări comune, nu probe automate.
             </p>
             {ranking.map((item) => (
               <article
@@ -134,25 +139,15 @@ export function MuieIndexClient({
                       <ScoreKindBadge kind={item.scoreKind} />
                     </div>
                   </div>
-                  <div className="text-right">
-                    <p className="terminal-label">Muie Score</p>
-                    <p className="font-mono text-5xl text-acid">
-                      {item.score?.total}
-                    </p>
-                  </div>
+                  <FrictionScore total={item.score?.total} name={item.name} />
                 </div>
                 <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
-                  {[
-                    ["UX", item.score?.usability],
-                    ["UPTIME*", item.score?.reliability],
-                    ["MOBILE", item.score?.mobile],
-                    ["ACCESSIBILITY", item.score?.accessibility],
-                    ["INTEROP", item.score?.interoperability],
-                    ["TRANSPARENCY", item.score?.transparency],
-                  ].map(([label, value]) => (
-                    <div key={String(label)} className="border border-border p-3">
+                  {FRICTION_DIMENSIONS.map(([label, key]) => (
+                    <div key={key} className="border border-border p-3">
                       <p className="font-mono text-[10px] text-muted">{label}</p>
-                      <p className="mt-1 font-mono text-xl">{value}</p>
+                      <p className="mt-1 font-mono text-xl">
+                        {item.score?.[key] ?? "n/a"}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -169,94 +164,20 @@ export function MuieIndexClient({
 
         {tab === "Metodologie" ? (
           <div
-            className="mt-8 space-y-8"
+            className="mt-8"
             role="tabpanel"
             id={panelId("Metodologie")}
             aria-labelledby={tabId("Metodologie")}
           >
-            <p className="max-w-2xl text-muted">
-              `npm test`, dar pentru administrație. Există trei straturi: nu le
-              amesteca.
+            <MethodologyBody />
+            <p className="mt-8">
+              <Link
+                href="/metodologie"
+                className="font-mono text-xs text-acid uppercase hover:underline"
+              >
+                Pagina stabilă /metodologie →
+              </Link>
             </p>
-            <section className="border border-warning/40 bg-warning/5 p-5">
-              <h3 className="font-display text-xl uppercase">
-                1. Estimare utilizatori
-              </h3>
-              <ul className="mt-3 space-y-2 text-sm text-muted">
-                <li>• Reflectă frustrări și așteptări comune, nu probe.</li>
-                <li>• Nu e eșantion statistic. Nu e uptime măsurat.</li>
-                <li>• Scorul compozit din catalog rămâne pe acest strat.</li>
-                <li>• Badge obligatoriu: ESTIMARE UTILIZATORI.</li>
-              </ul>
-            </section>
-            <section className="border border-success/40 bg-success/5 p-5">
-              <h3 className="font-display text-xl uppercase">
-                2. Semnale măsurate (acum)
-              </h3>
-              <ul className="mt-3 space-y-2 text-sm text-muted">
-                <li>
-                  • Probă HTTP zilnică pe fiecare portal din registry: status,
-                  latență, verdict. Rulată din GitHub Actions, commitată public.
-                </li>
-                <li>
-                  • Snapshot-uri Lighthouse (performance, accessibility, best
-                  practices, SEO) reîmprospătate săptămânal.
-                </li>
-                <li>
-                  • Provenance: tool, versiune, URL, dată. Fără SaaS de
-                  monitorizare, totul în repo.
-                </li>
-                <li>
-                  • Semnalele apar pe profil și în tab-ul Istoric. Nu înlocuiesc
-                  scorul Muie Index.
-                </li>
-              </ul>
-            </section>
-            <section className="border border-border p-5">
-              <h3 className="font-display text-xl uppercase">
-                3. Măsurătoare Muie Index (viitor)
-              </h3>
-              <ul className="mt-3 space-y-2 text-sm text-muted">
-                <li>• Probe availability / latency la interval mai des de o zi</li>
-                <li>• Core Web Vitals pe program</li>
-                <li>• Accessibility manuală (WCAG, keyboard, contrast)</li>
-                <li>• Interoperability + once-only + provenance</li>
-                <li>• Scor `measured` doar când metodologia e completă</li>
-              </ul>
-            </section>
-            {[
-              [
-                "Reliability",
-                ["availability", "latency", "HTTP failures"],
-              ],
-              ["UX", ["task completion", "clicks", "cognitive load", "forms"]],
-              [
-                "Accessibility",
-                ["WCAG", "keyboard", "semantics", "contrast"],
-              ],
-              [
-                "Interoperability",
-                ["date duplicate", "API availability", "manual exchange"],
-              ],
-              [
-                "Bureaucracy",
-                ["physical presence", "print requirements", "duplicate data"],
-              ],
-              [
-                "Transparency",
-                ["docs", "source provenance", "procurement discoverability"],
-              ],
-              ["Cost efficiency", ["cost vs delivered utility"]],
-            ].map(([title, items]) => (
-              <section key={String(title)} className="border border-border p-5">
-                <h3 className="font-display text-xl uppercase">{title}</h3>
-                <ul className="mt-3 grid gap-1 text-sm text-muted md:grid-cols-2">
-                  {(items as string[]).map((item) => (
-                    <li key={item}>• {item}</li>
-                  ))}
-                </ul>
-              </section>
-            ))}
           </div>
         ) : null}
 
@@ -285,16 +206,18 @@ export function MuieIndexClient({
                   <p className="mt-2 text-sm text-muted">
                     {item.website ?? "fără website în registry"}
                   </p>
-                  <p className="mt-2 font-mono text-sm text-acid">
-                    scor {item.score?.total ?? "n/a"}
+                  <p
+                    className={`mt-2 font-mono text-sm ${frictionToneClass(item.score?.total ?? 0)}`}
+                  >
+                    frecare {item.score?.total ?? "n/a"}
                   </p>
                 </article>
               ))}
             </div>
-            <ModulePlaceholder
-              content={getModulePlaceholder("muieIndex.institutions")}
-              badge="PREVIEW"
-            />
+            <p className="text-sm text-muted">
+              Serii Lighthouse și fișe de instituție mai dense: pe roadmap. Lista
+              de mai sus e catalogul.
+            </p>
           </div>
         ) : null}
 
@@ -338,10 +261,10 @@ export function MuieIndexClient({
                 </article>
               ))}
             </div>
-            <ModulePlaceholder
-              content={getModulePlaceholder("muieIndex.incidents")}
-              badge="PREVIEW"
-            />
+            <p className="text-sm text-muted">
+              Alertă automată pe incidente noi: pe roadmap. Lista de mai sus e
+              din surse publice.
+            </p>
           </div>
         ) : null}
 
@@ -426,10 +349,10 @@ export function MuieIndexClient({
                 răspunde · seria crește cu o zi la fiecare rulare
               </p>
             </div>
-            <ModulePlaceholder
-              content={getModulePlaceholder("muieIndex.history")}
-              badge="PREVIEW"
-            />
+            <p className="text-sm text-muted">
+              Probe mai dese decât o zi: pe roadmap. Seria de mai sus e GET
+              zilnic, commitat public.
+            </p>
           </div>
         ) : null}
       </div>

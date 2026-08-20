@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Muiesoft">
   <rect width="64" height="64" fill="#050505"/>
   <path
-    fill="#c6ff00"
+    fill="#f2c14e"
     fill-rule="evenodd"
     d="
       M10 44
@@ -27,7 +27,7 @@
     text-anchor="middle"
   >
     <text x="22" y="58" fill="#f5f3ec">&lt;</text>
-    <text x="32" y="58" fill="#c6ff00">/</text>
+    <text x="32" y="58" fill="#f2c14e">/</text>
     <text x="42" y="58" fill="#f5f3ec">&gt;</text>
   </g>
 </svg>

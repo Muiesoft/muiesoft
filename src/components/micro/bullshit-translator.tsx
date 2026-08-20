@@ -38,7 +38,7 @@ export function BullshitTranslator() {
       data-testid="bullshit-translator"
     >
       <div className="flex flex-wrap items-center gap-3">
-        <p className="terminal-label mb-0">Corporate Bullshit Translator</p>
+        <p className="terminal-label mb-0">Traducător de digitalizare</p>
         <DemoBadge label="SATIRĂ" />
       </div>
       <label htmlFor="bullshit-select" className="mt-4 block text-sm text-muted">

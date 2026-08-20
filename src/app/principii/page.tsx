@@ -1,10 +1,12 @@
 import { PageHero } from "@/components/shared/page-hero";
+import { TrustClose } from "@/components/shared/trust-close";
 import { brandCopy } from "@/config/copy";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Principii",
-  description: "Putem înjura. Nu putem inventa. Brutal cu opiniile. Obsesiv cu faptele.",
+  description:
+    "Fapte înainte de acuzații. Brutal cu opiniile. Obsesiv cu faptele.",
   path: "/principii",
 });
 
@@ -48,10 +50,10 @@ export default function PrincipiiPage() {
     <>
       <PageHero
         feature="principii"
-        title="Putem înjura."
+        title="Fapte înainte de acuzații."
         subtitle={
-          <p className="font-display text-3xl text-foreground uppercase">
-            Nu putem inventa.
+          <p className="font-display text-2xl text-foreground md:text-3xl">
+            Putem fi tăioși. Nu putem inventa.
           </p>
         }
       />
@@ -60,7 +62,7 @@ export default function PrincipiiPage() {
         <div className="space-y-8">
           {principles.map((item) => (
             <section key={item.title} className="border-b border-border pb-8">
-              <h2 className="font-display text-2xl uppercase">{item.title}</h2>
+              <h2 className="font-display text-2xl">{item.title}</h2>
               <p className="mt-3 text-muted">{item.body}</p>
             </section>
           ))}
@@ -73,6 +75,7 @@ export default function PrincipiiPage() {
             ANOMALIE ≠ VINOVĂȚIE
           </div>
         </div>
+        <TrustClose />
       </div>
     </>
   );

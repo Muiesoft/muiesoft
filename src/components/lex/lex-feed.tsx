@@ -32,7 +32,7 @@ export function LexFeed({
   return (
     <section>
       <div className="mb-4 flex flex-wrap items-center gap-3">
-        <h2 className="font-display text-3xl uppercase">Ce s-a futut azi?</h2>
+        <h2 className="font-display text-3xl">Ce s-a stricat azi?</h2>
         <FeatureStatus feature="muieLex" />
         {items.some((item) => item.demo) ? <DemoBadge /> : null}
       </div>

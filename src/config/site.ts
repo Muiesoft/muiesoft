@@ -2,10 +2,11 @@ export const siteConfig = {
   name: "Muiesoft",
   domain: "muiesoft.ro",
   url: "https://muiesoft.ro",
-  slogan: "Toată hula sau toată pula",
-  seoTitle: "Muiesoft · Civic-tech pentru o Românie transparentă",
+  slogan: "Cetățean privat. Stat transparent.",
+  acronym: "Măsurarea Uzabilității, Interoperabilității și Eficienței",
+  seoTitle: "Muiesoft · Cetățean privat. Stat transparent.",
   description:
-    "Civic-tech open-source pentru România: evaluăm portalurile publice, explicăm legea pe românește cu surse, generăm cereri pe Legea 544/2001 și ghidăm pași administrativi. Cetățean privat, stat transparent.",
+    "Muiesoft măsoară incompetența și risipa din administrația digitală, le face vizibile cu surse, și construiește alternative gratuite care fac soluțiile actuale inutile. Cetățean privat. Stat transparent.",
   keywords: [
     "Muiesoft",
     "civic-tech România",
@@ -19,7 +20,7 @@ export const siteConfig = {
   ],
   github: "https://github.com/Muiesoft/muiesoft",
   contact: "contact@muiesoft.ro",
-  logo: "/brand/logo-512.png",
+  logo: "/brand/logo.svg",
   repos: {
     site: "https://github.com/Muiesoft/muiesoft",
     data: "https://github.com/Muiesoft/muiesoft-data",

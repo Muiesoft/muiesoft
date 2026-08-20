@@ -1,5 +1,7 @@
 import { Freedom544Wizard } from "@/components/freedom544/wizard";
+import { JsonLdBlock } from "@/components/seo/json-ld-block";
 import { PageHero } from "@/components/shared/page-hero";
+import { siteConfig } from "@/config/site";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -7,6 +9,7 @@ export const metadata = buildMetadata({
   description:
     "Generator local de cereri pe Legea 544/2001 privind liberul acces la informațiile de interes public. Directory instituții, export și arhivă în browser.",
   path: "/544",
+  ogImage: "/544/opengraph-image",
 });
 
 function firstParam(value: string | string[] | undefined): string | undefined {
@@ -28,6 +31,18 @@ export default async function Freedom544Page({ searchParams }: Props) {
 
   return (
     <>
+      <JsonLdBlock
+        data={{
+          "@type": "WebApplication",
+          name: "Dă cu 544",
+          applicationCategory: "CivicApplication",
+          operatingSystem: "Web",
+          url: `${siteConfig.url}/544`,
+          isAccessibleForFree: true,
+          description:
+            "Generator local de cereri pe Legea 544/2001. Datele rămân în browser.",
+        }}
+      />
       <PageHero
         feature="freedom544"
         title="Dă cu 544."

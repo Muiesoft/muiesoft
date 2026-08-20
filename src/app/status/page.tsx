@@ -33,7 +33,7 @@ export default function StatusPage() {
       <PageHero
         feature="status"
         title="Status"
-        subtitle="Starea modulelor. Live înseamnă pe site; Preview înseamnă UI cu date parțiale; Planned înseamnă fără backend încă."
+        subtitle="Live = unealtă folosibilă azi. Preview = UI cu date parțiale. Planned = fără treabă încă."
       />
       <div className="mx-auto max-w-3xl px-4 py-10 md:px-8">
         <section className="border border-border bg-surface p-6">
@@ -68,7 +68,9 @@ export default function StatusPage() {
               key={key}
               className="flex items-center justify-between px-4 py-4"
             >
-              <span>{feature.label}</span>
+              <Link href={feature.href} className="hover:text-acid">
+                {feature.label}
+              </Link>
               <span className="inline-flex items-center gap-2 font-mono text-xs uppercase">
                 <span className={modeMeta[feature.mode].tone}>●</span>
                 {modeMeta[feature.mode].label}

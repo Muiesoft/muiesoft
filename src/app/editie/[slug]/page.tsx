@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { CiteBlock } from "@/components/shared/cite-block";
 import { DemoBadge } from "@/components/shared/demo-badge";
 import { ModulePlaceholder } from "@/components/shared/module-placeholder";
 import { Badge } from "@/components/ui/badge";
@@ -62,7 +63,7 @@ export default async function EditorialFormatPage({ params }: Props) {
         {active ? null : <DemoBadge label="FORMAT" />}
       </div>
       <p className="terminal-label mt-6">EDIȚIE / {format.slug}</p>
-      <h1 className="font-display mt-3 text-5xl leading-[0.95] font-bold uppercase md:text-6xl">
+      <h1 className="font-display mt-3 text-4xl leading-tight font-semibold md:text-5xl">
         {format.title}
       </h1>
       <p className="mt-6 max-w-2xl text-xl text-muted">{format.punchline}</p>
@@ -130,6 +131,10 @@ export default async function EditorialFormatPage({ params }: Props) {
               Fapte din sursele de mai sus. Nu e acuzație de corupție. Outlier ≠
               vinovăție.
             </p>
+            <CiteBlock
+              title={featured.title}
+              path={`/editie/${format.slug}`}
+            />
           </article>
         ) : (
           <div className="mt-6 min-h-32 border border-dashed border-border p-6">

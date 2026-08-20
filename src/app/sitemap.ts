@@ -15,6 +15,7 @@ const modules = [
   "/contribuie",
   "/manifest",
   "/principii",
+  "/metodologie",
 ];
 
 const secondary = [

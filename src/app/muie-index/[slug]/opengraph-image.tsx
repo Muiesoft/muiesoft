@@ -2,6 +2,7 @@ import { ImageResponse } from "next/og";
 import { getLighthouseSnapshot } from "@/data/registry/lighthouse-snapshots";
 import { registryServices } from "@/data/registry/services";
 import { getProbe, probeSummary, verdictMeta } from "@/lib/probes";
+import { applyMuieScore, frictionTone } from "@/lib/scoring";
 
 export const alt = "Scorecard Muie Index";
 export const size = { width: 1200, height: 630 };
@@ -23,9 +24,11 @@ export default async function OpenGraphImage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const institution = registryServices.find((i) => i.slug === slug);
+  const raw = registryServices.find((i) => i.slug === slug);
+  const institution = raw ? applyMuieScore(raw) : undefined;
   const lighthouse = getLighthouseSnapshot(slug);
   const probe = getProbe(slug);
+  const scoreTone = frictionTone(institution?.score?.total ?? 0);
 
   return new ImageResponse(
     (
@@ -91,14 +94,14 @@ export default async function OpenGraphImage({
           >
             <div style={{ display: "flex", flexDirection: "column" }}>
               <div style={{ display: "flex", fontSize: 22, color: "#9d9a91" }}>
-                MUIE SCORE
+                INDICE DE FRECARE
               </div>
               <div
                 style={{
                   display: "flex",
                   fontSize: 110,
                   fontWeight: 800,
-                  color: "#c6ff00",
+                  color: toneColor[scoreTone],
                   lineHeight: 1,
                 }}
               >

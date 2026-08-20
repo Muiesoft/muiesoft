@@ -2,8 +2,6 @@
 
 import { useMemo, useState } from "react";
 import { DemoBadge } from "@/components/shared/demo-badge";
-import { ModulePlaceholder } from "@/components/shared/module-placeholder";
-import { getModulePlaceholder } from "@/config/module-placeholders";
 import { quickActions } from "@/data/demo/procedures";
 import type { CivicProcedure } from "@/domain/procedure";
 
@@ -26,10 +24,14 @@ function matchesQuery(procedure: CivicProcedure, q: string): boolean {
 
 type RezolvaPageClientProps = {
   procedures: CivicProcedure[];
+  initialQuery?: string;
 };
 
-export function RezolvaPageClient({ procedures }: RezolvaPageClientProps) {
-  const [query, setQuery] = useState("");
+export function RezolvaPageClient({
+  procedures,
+  initialQuery = "",
+}: RezolvaPageClientProps) {
+  const [query, setQuery] = useState(initialQuery);
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
 
   const q = normalize(query.trim());
@@ -225,12 +227,10 @@ export function RezolvaPageClient({ procedures }: RezolvaPageClientProps) {
         Ghid orientativ cu surse oficiale. Verifică mereu formularele, taxele și
         termenele pe site-ul instituției înainte să depui ceva.
       </p>
-      <div className="mt-16">
-        <ModulePlaceholder
-          content={getModulePlaceholder("rezolva.sourced")}
-          badge="PREVIEW"
-        />
-      </div>
+      <p className="mt-8 text-sm text-muted">
+        Pași extra, notificări, export: pe roadmap. Cele de mai sus sunt ghiduri
+        cu surse.
+      </p>
     </div>
   );
 }

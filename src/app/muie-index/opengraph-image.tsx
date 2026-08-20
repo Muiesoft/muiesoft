@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Muie Index · Cine ne fute timpul?";
+export const alt = "Muie Index · portaluri publice din România";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -26,22 +26,21 @@ export default function OpenGraphImage() {
           <div
             style={{
               display: "flex",
-              fontSize: 72,
-              fontWeight: 800,
-              textTransform: "uppercase",
+              fontSize: 64,
+              fontWeight: 700,
             }}
           >
-            MUIE INDEX
+            Muie Index
           </div>
           <div
             style={{
               display: "flex",
-              fontSize: 36,
-              color: "#c6ff00",
+              fontSize: 32,
+              color: "#f2c14e",
               marginTop: 24,
             }}
           >
-            MERGE CA PULA
+              Scor mare = mai multă coadă.
           </div>
         </div>
         <div style={{ display: "flex", fontSize: 22, color: "#9d9a91" }}>

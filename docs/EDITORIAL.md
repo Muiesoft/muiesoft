@@ -2,6 +2,14 @@
 
 > Brutal cu opiniile. Obsesiv cu faptele.
 
+## Voice
+
+Brandul e tăios și ironic. MUIE e numele (Muiesoft, Muie Index, MuieLex), nu vocabularul. O glumă pe ecran, nu pe fiecare linie.
+
+Dacă Microsoft ar putea publica propoziția, rescrie. Dacă un adolescent ar râde doar de înjurătură, rescrie.
+
+Nu folosi *muie* ca substantiv comun (*muia zilei*, *harta muielii*). Acronimul e punchline-ul. Repetarea e filler.
+
 ## Rules
 
 ### Satire vs fact
@@ -11,6 +19,10 @@ Satira trebuie să fie recognoscibilă. Nu prezenta ficțiunea ca informație.
 ### Source requirements
 
 Dacă nu putem arăta sursa, nu avem voie să pretindem că știm.
+
+### Alternatives
+
+Dacă pretindem că o unealtă înlocuiește un flux oficial, trebuie să arătăm ce face, ce nu face, și sursa pașilor.
 
 ### Corrections
 

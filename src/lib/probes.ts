@@ -46,3 +46,23 @@ export function probeSummary(result: ProbeResult): string {
   if (result.verdict === "tls") return verdictMeta.tls.label;
   return `${verdictMeta.down.label}${result.error ? ` · ${result.error}` : ""}`;
 }
+
+export function probeHeaderState() {
+  const results = probeData.results;
+  const down = results.filter((r) => r.verdict === "down").length;
+  const warn = results.filter(
+    (r) => r.verdict === "tls" || r.verdict === "blocked",
+  ).length;
+  const answered = results.filter(
+    (r) => r.verdict === "ok" || r.verdict === "blocked",
+  ).length;
+  const tone: "success" | "warning" | "danger" =
+    down > 0 ? "danger" : warn > 0 ? "warning" : "success";
+  return {
+    tone,
+    pulse: down > 0,
+    answered,
+    total: results.length,
+    generatedAt: probeData.generatedAt,
+  };
+}

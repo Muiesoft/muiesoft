@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { legalRepository } from "@/adapters/demo/legal";
 import { LawDetail } from "@/components/lex/law-detail";
+import { JsonLdBlock } from "@/components/seo/json-ld-block";
+import { siteConfig } from "@/config/site";
 import { buildMetadata } from "@/lib/seo";
 
 type Props = {
@@ -23,7 +25,9 @@ export async function generateMetadata({ params }: Props) {
   }
   return buildMetadata({
     title: `${law.title} · MuieLex`,
-    description: "Document demonstrativ MuieLex. Nu este act normativ real.",
+    description: law.demo
+      ? "Document demonstrativ MuieLex. Nu este act normativ real."
+      : (law.versions[0]?.plainLanguage ?? law.title),
     path: `/lex/${slug}`,
   });
 }
@@ -32,5 +36,21 @@ export default async function LawPage({ params }: Props) {
   const { slug } = await params;
   const law = await legalRepository.getLaw(slug);
   if (!law) notFound();
-  return <LawDetail law={law} />;
+  const official = law.sources.find((source) => source.sourceType === "official");
+
+  return (
+    <>
+      <JsonLdBlock
+        data={{
+          "@type": "Legislation",
+          name: law.title,
+          legislationIdentifier: `${law.number}/${law.year}`,
+          url: `${siteConfig.url}/lex/${law.slug}`,
+          ...(official ? { sameAs: official.url } : {}),
+          ...(law.demo ? { creativeWorkStatus: "Draft" } : {}),
+        }}
+      />
+      <LawDetail law={law} />
+    </>
+  );
 }

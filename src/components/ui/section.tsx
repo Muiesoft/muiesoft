@@ -15,8 +15,8 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "border-b border-border px-4 py-16 md:px-8 md:py-24",
-        invert ? "bg-acid text-background" : "bg-background text-foreground",
+        "border-b border-border px-4 py-12 md:px-8 md:py-16",
+        invert ? "bg-foreground text-background" : "bg-background text-foreground",
         className,
       )}
     >
@@ -47,7 +47,7 @@ export function SectionHeading({
   return (
     <h2
       className={cn(
-        "font-display text-4xl leading-[0.95] font-bold tracking-tight uppercase md:text-6xl",
+        "font-display text-3xl leading-tight font-semibold tracking-tight md:text-5xl",
         className,
       )}
     >

@@ -17,8 +17,8 @@ export const hartaStatusMeta: Record<
     tileClass: "bg-warning/15 text-warning border-warning/40",
   },
   broken: {
-    label: "MERGE CA PULA",
-    shortLabel: "MERGE CA PULA",
+    label: "NU MERGE",
+    shortLabel: "NU MERGE",
     stampClass: "text-danger",
     tileClass: "bg-danger/15 text-danger border-danger/40",
   },

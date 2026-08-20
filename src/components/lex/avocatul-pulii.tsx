@@ -12,9 +12,7 @@ export function AvocatulPulii() {
   return (
     <div className="border border-border bg-surface p-6">
       <Badge variant="planned">AI LEGAL</Badge>
-      <h3 className="font-display mt-4 text-2xl uppercase">
-        Întreabă Avocatul Pulii
-      </h3>
+      <h3 className="font-display mt-4 text-2xl">Întreabă MuieLex</h3>
       <label htmlFor="avocat-input" className="sr-only">
         Întreabă ceva despre lege
       </label>

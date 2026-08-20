@@ -6,6 +6,7 @@ type BuildMetadataInput = {
   description?: string;
   path?: string;
   noIndex?: boolean;
+  ogImage?: string;
 };
 
 export function buildMetadata({
@@ -13,13 +14,14 @@ export function buildMetadata({
   description = siteConfig.description,
   path = "",
   noIndex = false,
+  ogImage = "/opengraph-image",
 }: BuildMetadataInput): Metadata {
   const url = `${siteConfig.url}${path}`;
   const image = {
-    url: "/opengraph-image",
+    url: ogImage,
     width: 1200,
     height: 630,
-    alt: siteConfig.seoTitle,
+    alt: title,
   };
 
   return {

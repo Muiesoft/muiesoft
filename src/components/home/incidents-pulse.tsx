@@ -20,7 +20,7 @@ export function IncidentsPulse() {
 
   return (
     <Section id="incidente">
-      <SectionLabel>INCIDENTE</SectionLabel>
+      <SectionLabel>Incidente</SectionLabel>
       <SectionHeading>Ce e picat.</SectionHeading>
       <p className="mt-4 max-w-2xl text-muted">
         Fapte din surse publice. Outlier ≠ vinovăție. Dacă nu putem arăta

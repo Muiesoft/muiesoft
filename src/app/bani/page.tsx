@@ -23,7 +23,7 @@ export default async function BaniPage({ searchParams }: Props) {
     <>
       <PageHero
         feature="money"
-        title="Cât a costat căcatul ăsta?"
+        title="Unde-s banii?"
         subtitle="Contracte publice cu surse. Anomalie ≠ vinovăție. Fără cifre inventate."
       />
       <MoneyClient contracts={contracts} initialQuery={initialQuery} />

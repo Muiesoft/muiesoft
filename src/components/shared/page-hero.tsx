@@ -20,7 +20,7 @@ export function PageHero({
   return (
     <header
       className={cn(
-        "border-b border-border px-4 py-14 md:px-8 md:py-20",
+        "border-b border-border px-4 py-12 md:px-8 md:py-16",
         className,
       )}
     >
@@ -31,7 +31,7 @@ export function PageHero({
           ) : null}
           {feature ? <FeatureStatus feature={feature} /> : null}
         </div>
-        <h1 className="font-display text-5xl leading-[0.92] font-bold tracking-tight uppercase md:text-7xl">
+        <h1 className="font-display text-4xl leading-tight font-semibold tracking-tight md:text-5xl">
           {title}
         </h1>
         {subtitle ? (

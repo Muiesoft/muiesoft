@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo_Black, Geist, IBM_Plex_Mono } from "next/font/google";
+import { Geist, IBM_Plex_Mono, Source_Serif_4 } from "next/font/google";
 import { CommandPalette } from "@/components/layout/command-palette";
 import { CookieConsent } from "@/components/layout/cookie-consent";
 import { EasterEggs } from "@/components/layout/easter-eggs";
-import { RudeChatbot } from "@/components/layout/rude-chatbot";
+import { HeaderStatusPip } from "@/components/layout/header-status-pip";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SkipLink } from "@/components/layout/skip-link";
@@ -11,10 +11,10 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
-const display = Archivo_Black({
+const display = Source_Serif_4({
   variable: "--font-display",
   subsets: ["latin", "latin-ext"],
-  weight: "400",
+  weight: ["600", "700"],
 });
 
 const body = Geist({
@@ -43,7 +43,10 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [...siteConfig.keywords],
-  alternates: { canonical: siteConfig.url },
+  alternates: {
+    canonical: siteConfig.url,
+    types: { "application/rss+xml": `${siteConfig.url}/feed.xml` },
+  },
   robots: { index: true, follow: true },
   openGraph: {
     title: siteConfig.seoTitle,
@@ -89,14 +92,13 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col bg-background text-foreground">
         <JsonLd />
         <SkipLink />
-        <SiteHeader />
+        <SiteHeader status={<HeaderStatusPip />} />
         <main id="main" className="flex-1">
           {children}
         </main>
         <SiteFooter />
         <CommandPalette />
         <CookieConsent />
-        <RudeChatbot />
         <EasterEggs />
       </body>
     </html>

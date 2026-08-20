@@ -8,6 +8,40 @@ export type ChangelogEntry = {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: "v0.5.1",
+    date: "2026-08-20",
+    added: [
+      "Contestă sau documentează un scor, pe email, fără GitHub",
+      "Pip Status din proba HTTP: verde static dacă portalurile răspund",
+    ],
+    removed: [
+      "Acronimul M.U.I.E. de pe hero și grila de 4 litere de pe homepage",
+    ],
+    changed: [
+      "Muie Score e indice de frecare: scor mare = mai multă coadă. 68 la Oradea nu era laudă.",
+      "Clasamentul sortează frecarea, nu nota de calitate.",
+    ],
+  },
+  {
+    version: "v0.5.0",
+    date: "2026-08-20",
+    added: [
+      "Misiune clară: măsurăm, traducem, cerem, înlocuim",
+      "Contribuie pe roluri: cetățean, jurnalist, funcționar, developer",
+    ],
+    removed: [
+      "Sloganul „Toată hula sau toată pula”",
+      "Ghișoid din layout",
+      "Login fals din header",
+      "Rezolvă de pe homepage până e unealtă, nu titlu",
+    ],
+    changed: [
+      "Pivot de voce: MUIE e numele, nu vocabularul. Cetățean privat. Stat transparent.",
+      "Nav redusă la unelte civice reale: Index, Harta, MuieLex, 544, Contribuie",
+      "Premii, hartă, MuieLex, editoriale: fără înjurături ca produs",
+    ],
+  },
+  {
     version: "v0.4.6",
     date: "2026-08-10",
     added: [],

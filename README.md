@@ -1,12 +1,12 @@
 # Muiesoft
 
-> Toată hula sau toată pula.
+> Cetățean privat. Stat transparent.
 
-Civic-tech open-source pentru o Românie în care cetățeanul este privat, statul este transparent și birocrația primește unit tests.
+Civic-tech open-source: măsurăm incompetența și risipa din administrația digitală românească, le facem vizibile cu surse, și construim alternative gratuite care fac soluțiile actuale inutile.
+
+**M.U.I.E.** — Măsurarea Uzabilității, Interoperabilității și Eficienței.
 
 ## Project
-
-Muiesoft pornește ca satiră anti-corporate și evoluează într-o infrastructură civic-tech:
 
 - **Muie Index** — măsurăm serviciile publice digitale
 - **MuieLex** — legea, pe românește, cu surse

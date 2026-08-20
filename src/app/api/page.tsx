@@ -1,5 +1,6 @@
-import { ModulePlaceholder } from "@/components/shared/module-placeholder";
+import { JsonLdBlock, datasetJsonLd } from "@/components/seo/json-ld-block";
 import { FeatureStatus } from "@/components/shared/feature-status";
+import { ModulePlaceholder } from "@/components/shared/module-placeholder";
 import { PageHero } from "@/components/shared/page-hero";
 import { Badge } from "@/components/ui/badge";
 import { getModulePlaceholder } from "@/config/module-placeholders";
@@ -9,7 +10,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "România, dar cu API",
   description:
-    "API public read-only în preview: legi, portaluri, contracte, proceduri și incidente, cu provenance, direct din registry-ul Muiesoft.",
+    "API public read-only: legi, portaluri, contracte, proceduri și incidente, cu provenance, direct din registry-ul Muiesoft.",
   path: "/api",
 });
 
@@ -56,6 +57,14 @@ const statusCodes = [
 export default function ApiPage() {
   return (
     <>
+      <JsonLdBlock
+        data={datasetJsonLd({
+          name: "Muiesoft API v1",
+          description:
+            "API public read-only: portaluri, legi, contracte, proceduri, incidente, probe HTTP.",
+          path: "/api",
+        })}
+      />
       <PageHero
         feature="api"
         title="România, dar cu API."
@@ -69,7 +78,15 @@ export default function ApiPage() {
           </Badge>
         </div>
         <p className="mt-4 text-sm text-muted">
-          Specificație OpenAPI:{" "}
+          Actualizări și pe{" "}
+          <a href="/feed.xml" className="text-acid hover:underline">
+            /feed.xml
+          </a>{" "}
+          și{" "}
+          <a href="/api/v1/changes" className="text-acid hover:underline">
+            /api/v1/changes
+          </a>
+          . Specificație OpenAPI:{" "}
           <code className="text-acid">docs/api/openapi.yaml</code>
           {"; "}
           scheme Zod:{" "}

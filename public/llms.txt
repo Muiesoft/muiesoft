@@ -1,0 +1,18 @@
+Muiesoft
+
+Cetățean privat. Stat transparent.
+
+Index de frecare pentru portaluri publice din România, cereri pe Legea 544/2001, proceduri cu surse, API read-only.
+
+Pagini utile
+- Metodologie: https://muiesoft.ro/metodologie
+- API: https://muiesoft.ro/api
+- RSS: https://muiesoft.ro/feed.xml
+- Principii: https://muiesoft.ro/principii
+- Contribuie: https://muiesoft.ro/contribuie
+- Muie Index: https://muiesoft.ro/muie-index
+
+Drept la replică: contact@muiesoft.ro
+
+Licență: AGPL-3.0
+Cod: https://github.com/Muiesoft/muiesoft

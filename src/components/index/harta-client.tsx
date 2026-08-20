@@ -2,10 +2,8 @@
 
 import { useMemo, useState } from "react";
 import { HartaRomania } from "@/components/index/harta-romania";
-import { ModulePlaceholder } from "@/components/shared/module-placeholder";
 import { DemoBadge } from "@/components/shared/demo-badge";
 import { Badge } from "@/components/ui/badge";
-import { getModulePlaceholder } from "@/config/module-placeholders";
 import { registryServices } from "@/data/registry/services";
 import { filterInstitutions } from "@/lib/harta-filter";
 import {
@@ -153,12 +151,9 @@ export function HartaClient() {
           })
         )}
       </div>
-      <div className="mt-16">
-        <ModulePlaceholder
-          content={getModulePlaceholder("harta.live")}
-          badge="PREVIEW"
-        />
-      </div>
+      <p className="mt-8 text-sm text-muted">
+        Geo tiles live: pe roadmap. Harta de mai sus e catalogul, nu GPS.
+      </p>
     </div>
   );
 }

@@ -13,12 +13,12 @@ export type EditorialFormat = {
 export const editorialFormats: EditorialFormat[] = [
   {
     slug: "muia-zilei",
-    title: "Muia Zilei",
+    title: "Cazul zilei",
     punchline: "Cel mai absurd UX public verificat. O dată pe zi. Fără milă.",
     whatItShows:
       "Un caz documentat: capturi, pași de reproducere, instituție, surse.",
     emptyState:
-      "Nicio muie a zilei încă. Feed-ul e gol până avem primul caz cu surse.",
+      "Niciun caz al zilei încă. Feed-ul e gol până avem primul caz cu surse.",
     slotLabels: {
       featured: "Cazul zilei",
       archive: "Arhivă",
@@ -116,7 +116,7 @@ export const editorialFormats: EditorialFormat[] = [
   },
   {
     slug: "nicio-muie",
-    title: "Nicio Muie",
+    title: "Când merge",
     punchline: "Când administrația face ceva bine, spunem și asta.",
     whatItShows:
       "Exemplu pozitiv verificat: UX, disponibilitate, transparență, impact.",

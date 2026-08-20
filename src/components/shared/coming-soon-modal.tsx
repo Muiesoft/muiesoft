@@ -45,7 +45,7 @@ export function ComingSoonModal({
         <Badge variant="planned">{title}</Badge>
         <h2
           id="coming-soon-title"
-          className="font-display mt-4 text-2xl font-bold uppercase"
+          className="font-display mt-4 text-2xl font-semibold"
         >
           Nu e disponibil acum.
         </h2>

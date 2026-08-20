@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 const statuses = [
   "MERGE",
   "MERGE, CULMEA",
-  "MERGE CA PULA",
+  "NU MERGE",
   "PDF-DEPENDENT",
   "GHIȘEU-BOUND",
   "EXCEL-POWERED",

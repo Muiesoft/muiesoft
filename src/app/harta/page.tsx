@@ -3,10 +3,11 @@ import { PageHero } from "@/components/shared/page-hero";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Harta Națională a Muielii Digitale",
+  title: "Harta portalurilor",
   description:
     "Digitalizarea României, văzută de oamenii care trebuie s-o folosească.",
   path: "/harta",
+  ogImage: "/harta/opengraph-image",
 });
 
 export default function HartaPage() {
@@ -14,7 +15,7 @@ export default function HartaPage() {
     <>
       <PageHero
         feature="harta"
-        title="Harta Națională a Muielii Digitale"
+        title="Harta portalurilor"
         subtitle="Digitalizarea României, văzută de oamenii care trebuie s-o folosească."
       />
       <HartaClient />
