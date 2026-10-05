@@ -1,9 +1,9 @@
 [
   {
-    "id": "lh-ghiseul-ro-2026-09-28",
+    "id": "lh-ghiseul-ro-2026-10-05",
     "serviceSlug": "ghiseul-ro",
     "url": "https://www.ghiseul.ro",
-    "fetchedAt": "2026-09-28T11:59:12.792Z",
+    "fetchedAt": "2026-10-05T12:35:54.318Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
@@ -16,10 +16,10 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-anaf-ro-2026-09-28",
+    "id": "lh-anaf-ro-2026-10-05",
     "serviceSlug": "anaf-ro",
     "url": "https://www.anaf.ro",
-    "fetchedAt": "2026-09-28T11:59:43.987Z",
+    "fetchedAt": "2026-10-05T12:36:31.982Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
@@ -27,7 +27,7 @@
       "performance": 17,
       "accessibility": 74,
       "bestPractices": 69,
-      "seo": 67
+      "seo": 73
     },
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
@@ -48,10 +48,10 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-onrc-ro-2026-09-28",
+    "id": "lh-onrc-ro-2026-10-05",
     "serviceSlug": "onrc-ro",
     "url": "https://www.onrc.ro",
-    "fetchedAt": "2026-09-28T12:00:04.268Z",
+    "fetchedAt": "2026-10-05T12:36:53.391Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
@@ -80,15 +80,15 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-cnpp-ro-2026-09-28",
+    "id": "lh-cnpp-ro-2026-10-05",
     "serviceSlug": "cnpp-ro",
     "url": "https://www.cnpp.ro",
-    "fetchedAt": "2026-09-28T12:00:38.748Z",
+    "fetchedAt": "2026-10-05T12:39:29.000Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
     "scores": {
-      "performance": 77,
+      "performance": 95,
       "accessibility": 95,
       "bestPractices": 81,
       "seo": 100
@@ -112,15 +112,15 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-depabd-2026-09-28",
+    "id": "lh-depabd-2026-10-05",
     "serviceSlug": "depabd",
     "url": "https://depabd.mai.gov.ro",
-    "fetchedAt": "2026-09-28T12:03:18.897Z",
+    "fetchedAt": "2026-10-05T12:42:11.221Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
     "scores": {
-      "performance": 62,
+      "performance": 60,
       "accessibility": 75,
       "bestPractices": 65,
       "seo": 83
@@ -128,15 +128,15 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-edirect-e-guvernare-2026-09-28",
+    "id": "lh-edirect-e-guvernare-2026-10-05",
     "serviceSlug": "edirect-e-guvernare",
     "url": "https://edirect.e-guvernare.ro",
-    "fetchedAt": "2026-09-28T12:03:42.541Z",
+    "fetchedAt": "2026-10-05T12:42:37.965Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
     "scores": {
-      "performance": 46,
+      "performance": 45,
       "accessibility": 81,
       "bestPractices": 73,
       "seo": 83
@@ -160,10 +160,10 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-ancpi-ro-2026-09-28",
+    "id": "lh-ancpi-ro-2026-10-05",
     "serviceSlug": "ancpi-ro",
     "url": "https://www.ancpi.ro",
-    "fetchedAt": "2026-09-28T12:04:02.394Z",
+    "fetchedAt": "2026-10-05T12:42:58.188Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
@@ -192,15 +192,15 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-mfinante-gov-ro-2026-09-28",
+    "id": "lh-mfinante-gov-ro-2026-10-05",
     "serviceSlug": "mfinante-gov-ro",
     "url": "https://mfinante.gov.ro",
-    "fetchedAt": "2026-09-28T12:07:17.899Z",
+    "fetchedAt": "2026-10-05T12:46:16.346Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
     "scores": {
-      "performance": 55,
+      "performance": 35,
       "accessibility": 82,
       "bestPractices": 96,
       "seo": 69
@@ -208,15 +208,15 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-econsulat-ro-2026-09-28",
+    "id": "lh-econsulat-ro-2026-10-05",
     "serviceSlug": "econsulat-ro",
     "url": "https://www.econsulat.ro",
-    "fetchedAt": "2026-09-28T12:07:33.600Z",
+    "fetchedAt": "2026-10-05T12:46:33.685Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
     "scores": {
-      "performance": 52,
+      "performance": 51,
       "accessibility": 86,
       "bestPractices": 100,
       "seo": 75
@@ -224,15 +224,15 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-anofm-ro-2026-09-28",
+    "id": "lh-anofm-ro-2026-10-05",
     "serviceSlug": "anofm-ro",
     "url": "https://www.anofm.ro",
-    "fetchedAt": "2026-09-28T12:07:52.976Z",
+    "fetchedAt": "2026-10-05T12:46:54.666Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
     "scores": {
-      "performance": 60,
+      "performance": 56,
       "accessibility": 88,
       "bestPractices": 77,
       "seo": 92
@@ -240,15 +240,15 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-reges-online-2026-09-28",
+    "id": "lh-reges-online-2026-10-05",
     "serviceSlug": "reges-online",
     "url": "https://reges.inspectiamuncii.ro",
-    "fetchedAt": "2026-09-28T12:08:14.380Z",
+    "fetchedAt": "2026-10-05T12:47:22.245Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
     "scores": {
-      "performance": 48,
+      "performance": 45,
       "accessibility": 85,
       "bestPractices": 100,
       "seo": 82
@@ -256,15 +256,15 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-e-licitatie-ro-2026-09-28",
+    "id": "lh-e-licitatie-ro-2026-10-05",
     "serviceSlug": "e-licitatie-ro",
     "url": "https://www.e-licitatie.ro",
-    "fetchedAt": "2026-09-28T12:08:34.541Z",
+    "fetchedAt": "2026-10-05T12:47:45.257Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
     "scores": {
-      "performance": 3,
+      "performance": 2,
       "accessibility": 82,
       "bestPractices": 81,
       "seo": 91
@@ -272,17 +272,17 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-drpciv-ro-2026-09-28",
+    "id": "lh-drpciv-ro-2026-10-05",
     "serviceSlug": "drpciv-ro",
     "url": "https://www.drpciv.ro",
-    "fetchedAt": "2026-09-28T12:08:52.701Z",
+    "fetchedAt": "2026-10-05T12:48:07.832Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
     "scores": {
-      "performance": 50,
+      "performance": 26,
       "accessibility": 67,
-      "bestPractices": 92,
+      "bestPractices": 88,
       "seo": 67
     },
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
@@ -304,15 +304,15 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-monitorul-oficial-2026-09-28",
+    "id": "lh-monitorul-oficial-2026-10-05",
     "serviceSlug": "monitorul-oficial",
     "url": "https://www.monitoruloficial.ro",
-    "fetchedAt": "2026-09-28T12:11:39.715Z",
+    "fetchedAt": "2026-10-05T12:51:01.427Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
     "scores": {
-      "performance": 46,
+      "performance": 43,
       "accessibility": 90,
       "bestPractices": 96,
       "seo": 100
@@ -336,26 +336,26 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-primaria-cluj-napoca-2026-09-28",
+    "id": "lh-primaria-cluj-napoca-2026-10-05",
     "serviceSlug": "primaria-cluj-napoca",
     "url": "https://primariaclujnapoca.ro",
-    "fetchedAt": "2026-09-28T12:14:28.052Z",
+    "fetchedAt": "2026-10-05T12:53:48.240Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
     "scores": {
-      "performance": 39,
-      "accessibility": 90,
+      "performance": 35,
+      "accessibility": 87,
       "bestPractices": 73,
       "seo": 92
     },
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-primaria-oradea-2026-09-21",
+    "id": "lh-primaria-oradea-2026-10-05",
     "serviceSlug": "primaria-oradea",
     "url": "https://www.oradea.ro",
-    "fetchedAt": "2026-09-21T11:24:24.431Z",
+    "fetchedAt": "2026-10-05T12:54:20.939Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
@@ -368,15 +368,15 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-primaria-timisoara-2026-09-28",
+    "id": "lh-primaria-timisoara-2026-10-05",
     "serviceSlug": "primaria-timisoara",
     "url": "https://www.primariatm.ro",
-    "fetchedAt": "2026-09-28T12:15:44.370Z",
+    "fetchedAt": "2026-10-05T12:54:36.533Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
     "scores": {
-      "performance": 45,
+      "performance": 36,
       "accessibility": 85,
       "bestPractices": 96,
       "seo": 100
@@ -384,15 +384,15 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-primaria-iasi-2026-09-28",
+    "id": "lh-primaria-iasi-2026-10-05",
     "serviceSlug": "primaria-iasi",
     "url": "https://www.primaria-iasi.ro",
-    "fetchedAt": "2026-09-28T12:16:55.591Z",
+    "fetchedAt": "2026-10-05T12:55:45.485Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
     "scores": {
-      "performance": 52,
+      "performance": 48,
       "accessibility": 79,
       "bestPractices": 73,
       "seo": 83
@@ -400,15 +400,15 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-primaria-brasov-2026-09-28",
+    "id": "lh-primaria-brasov-2026-10-05",
     "serviceSlug": "primaria-brasov",
     "url": "https://www.brasovcity.ro",
-    "fetchedAt": "2026-09-28T12:17:23.942Z",
+    "fetchedAt": "2026-10-05T12:56:15.105Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
     "scores": {
-      "performance": 54,
+      "performance": 50,
       "accessibility": 78,
       "bestPractices": 96,
       "seo": 100
@@ -416,15 +416,15 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-primaria-sibiu-2026-09-28",
+    "id": "lh-primaria-sibiu-2026-10-05",
     "serviceSlug": "primaria-sibiu",
     "url": "https://www.sibiu.ro",
-    "fetchedAt": "2026-09-28T12:17:49.161Z",
+    "fetchedAt": "2026-10-05T12:56:38.119Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
     "scores": {
-      "performance": 59,
+      "performance": 51,
       "accessibility": 90,
       "bestPractices": 50,
       "seo": 92
@@ -432,10 +432,10 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-pmb-bucuresti-2026-09-28",
+    "id": "lh-pmb-bucuresti-2026-10-05",
     "serviceSlug": "pmb-bucuresti",
     "url": "https://www.pmb.ro",
-    "fetchedAt": "2026-09-28T12:18:15.693Z",
+    "fetchedAt": "2026-10-05T12:57:11.229Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
@@ -448,15 +448,15 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-primaria-constanta-2026-09-28",
+    "id": "lh-primaria-constanta-2026-10-05",
     "serviceSlug": "primaria-constanta",
     "url": "https://www.primaria-constanta.ro",
-    "fetchedAt": "2026-09-28T12:18:45.773Z",
+    "fetchedAt": "2026-10-05T12:57:33.873Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
     "scores": {
-      "performance": 55,
+      "performance": 52,
       "accessibility": 83,
       "bestPractices": 100,
       "seo": 77
@@ -464,15 +464,15 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-primaria-craiova-2026-09-28",
+    "id": "lh-primaria-craiova-2026-10-05",
     "serviceSlug": "primaria-craiova",
     "url": "https://www.primariacraiova.ro",
-    "fetchedAt": "2026-09-28T12:19:03.199Z",
+    "fetchedAt": "2026-10-05T12:57:53.331Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
     "scores": {
-      "performance": 59,
+      "performance": 55,
       "accessibility": 67,
       "bestPractices": 88,
       "seo": 92
@@ -480,16 +480,16 @@
     "note": "Snapshot Lighthouse one-off (mobile default). Nu este scor Muie Index complet, nu este uptime, nu înlocuiește estimarea din catalog."
   },
   {
-    "id": "lh-primaria-galati-2026-09-28",
+    "id": "lh-primaria-galati-2026-10-05",
     "serviceSlug": "primaria-galati",
     "url": "https://www.primariagalati.ro",
-    "fetchedAt": "2026-09-28T12:19:28.680Z",
+    "fetchedAt": "2026-10-05T12:58:20.111Z",
     "tool": "lighthouse",
     "toolVersion": "13.5.0",
     "formFactor": "mobile",
     "scores": {
       "performance": 49,
-      "accessibility": 71,
+      "accessibility": 73,
       "bestPractices": 88,
       "seo": 58
     },
