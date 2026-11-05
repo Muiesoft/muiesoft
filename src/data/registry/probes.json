@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T12:08:12.781Z",
+  "generatedAt": "2026-11-05T12:19:53.435Z",
   "tool": "muiesoft-probe",
   "origin": "github-actions",
   "note": "Probă HTTP: un GET per portal, IPv4 first, max 3 în paralel, 2 reîncercări pe eșec de transport. Runda zilnică e din GitHub Actions; origin=adhoc e o rulare în afara cronului. Semnal de disponibilitate, nu uptime și nu scor Muie Index. Verdicte: ok = 2xx/3xx; blocked = 403/429/503 (refuză clienți automați); tls = certificat neverificabil pentru clienți stricți; unreachable = timeout / RST / socket, nu e afirmație că cetățeanul nu deschide site-ul; down = DNS mort sau fără rută. Un snapshot Lighthouse existent previne down. Istoricul anterior a fost recitit cu aceste reguli (503/timeout ≠ down).",
@@ -9,16 +9,16 @@
       "url": "https://www.ghiseul.ro",
       "status": 403,
       "verdict": "blocked",
-      "latencyMs": 290,
-      "checkedAt": "2026-11-04T12:07:34.708Z"
+      "latencyMs": 141,
+      "checkedAt": "2026-11-05T12:19:16.299Z"
     },
     {
       "slug": "anaf-ro",
       "url": "https://www.anaf.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 1094,
-      "checkedAt": "2026-11-04T12:07:34.750Z"
+      "latencyMs": 1011,
+      "checkedAt": "2026-11-05T12:19:16.329Z"
     },
     {
       "slug": "legislatie-just-ro",
@@ -26,16 +26,16 @@
       "status": 0,
       "verdict": "unreachable",
       "error": "UND_ERR_SOCKET",
-      "latencyMs": 563,
-      "checkedAt": "2026-11-04T12:07:36.263Z"
+      "latencyMs": 580,
+      "checkedAt": "2026-11-05T12:19:17.540Z"
     },
     {
       "slug": "onrc-ro",
       "url": "https://www.onrc.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 1792,
-      "checkedAt": "2026-11-04T12:07:35.000Z"
+      "latencyMs": 1325,
+      "checkedAt": "2026-11-05T12:19:16.442Z"
     },
     {
       "slug": "data-gov-ro",
@@ -43,56 +43,56 @@
       "status": 0,
       "verdict": "unreachable",
       "error": "UND_ERR_CONNECT_TIMEOUT",
-      "latencyMs": 10491,
-      "checkedAt": "2026-11-04T12:07:56.732Z"
+      "latencyMs": 10487,
+      "checkedAt": "2026-11-05T12:19:38.323Z"
     },
     {
       "slug": "cnpp-ro",
       "url": "https://www.cnpp.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 1452,
-      "checkedAt": "2026-11-04T12:07:36.792Z"
+      "latencyMs": 1027,
+      "checkedAt": "2026-11-05T12:19:17.767Z"
     },
     {
       "slug": "portal-just-ro",
       "url": "https://portal.just.ro",
       "status": 403,
       "verdict": "blocked",
-      "latencyMs": 226,
-      "checkedAt": "2026-11-04T12:07:36.826Z"
+      "latencyMs": 185,
+      "checkedAt": "2026-11-05T12:19:18.120Z"
     },
     {
       "slug": "depabd",
       "url": "https://depabd.mai.gov.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 1353,
-      "checkedAt": "2026-11-04T12:07:37.052Z"
+      "latencyMs": 1052,
+      "checkedAt": "2026-11-05T12:19:18.306Z"
     },
     {
       "slug": "edirect-e-guvernare",
       "url": "https://edirect.e-guvernare.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 3089,
-      "checkedAt": "2026-11-04T12:07:38.244Z"
+      "latencyMs": 2701,
+      "checkedAt": "2026-11-05T12:19:18.794Z"
     },
     {
       "slug": "cnas-ro",
       "url": "https://cnas.ro",
       "status": 503,
       "verdict": "blocked",
-      "latencyMs": 1080,
-      "checkedAt": "2026-11-04T12:07:38.405Z"
+      "latencyMs": 909,
+      "checkedAt": "2026-11-05T12:19:19.357Z"
     },
     {
       "slug": "ancpi-ro",
       "url": "https://www.ancpi.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 245,
-      "checkedAt": "2026-11-04T12:07:39.485Z"
+      "latencyMs": 222,
+      "checkedAt": "2026-11-05T12:19:20.267Z"
     },
     {
       "slug": "epasapoarte-ro",
@@ -100,64 +100,64 @@
       "status": 0,
       "verdict": "unreachable",
       "error": "UND_ERR_CONNECT_TIMEOUT",
-      "latencyMs": 10490,
-      "checkedAt": "2026-11-04T12:08:00.229Z"
+      "latencyMs": 10486,
+      "checkedAt": "2026-11-05T12:19:41.319Z"
     },
     {
       "slug": "hub-mai",
       "url": "https://hub.mai.gov.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 1894,
-      "checkedAt": "2026-11-04T12:07:41.333Z"
+      "latencyMs": 1393,
+      "checkedAt": "2026-11-05T12:19:21.495Z"
     },
     {
       "slug": "mfinante-gov-ro",
       "url": "https://mfinante.gov.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 3640,
-      "checkedAt": "2026-11-04T12:07:43.227Z"
+      "latencyMs": 3176,
+      "checkedAt": "2026-11-05T12:19:22.888Z"
     },
     {
       "slug": "econsulat-ro",
       "url": "https://www.econsulat.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 1620,
-      "checkedAt": "2026-11-04T12:07:46.867Z"
+      "latencyMs": 1200,
+      "checkedAt": "2026-11-05T12:19:26.064Z"
     },
     {
       "slug": "anofm-ro",
       "url": "https://www.anofm.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 4638,
-      "checkedAt": "2026-11-04T12:07:48.488Z"
+      "latencyMs": 3981,
+      "checkedAt": "2026-11-05T12:19:27.264Z"
     },
     {
       "slug": "reges-online",
       "url": "https://reges.inspectiamuncii.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 897,
-      "checkedAt": "2026-11-04T12:07:53.126Z"
+      "latencyMs": 870,
+      "checkedAt": "2026-11-05T12:19:31.246Z"
     },
     {
       "slug": "e-licitatie-ro",
       "url": "https://www.e-licitatie.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 4609,
-      "checkedAt": "2026-11-04T12:07:54.023Z"
+      "latencyMs": 2092,
+      "checkedAt": "2026-11-05T12:19:32.115Z"
     },
     {
       "slug": "drpciv-ro",
       "url": "https://www.drpciv.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 3367,
-      "checkedAt": "2026-11-04T12:07:58.631Z"
+      "latencyMs": 2034,
+      "checkedAt": "2026-11-05T12:19:34.208Z"
     },
     {
       "slug": "insse-ro",
@@ -166,15 +166,15 @@
       "verdict": "unreachable",
       "error": "ETIMEDOUT",
       "latencyMs": 253,
-      "checkedAt": "2026-11-04T12:08:02.962Z"
+      "checkedAt": "2026-11-05T12:19:37.146Z"
     },
     {
       "slug": "monitorul-oficial",
       "url": "https://www.monitoruloficial.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 2047,
-      "checkedAt": "2026-11-04T12:08:03.214Z"
+      "latencyMs": 2376,
+      "checkedAt": "2026-11-05T12:19:37.399Z"
     },
     {
       "slug": "apia-org-ro",
@@ -183,87 +183,87 @@
       "verdict": "unreachable",
       "error": "ETIMEDOUT",
       "latencyMs": 252,
-      "checkedAt": "2026-11-04T12:08:06.082Z"
+      "checkedAt": "2026-11-05T12:19:40.555Z"
     },
     {
       "slug": "primaria-cluj-napoca",
       "url": "https://primariaclujnapoca.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 1434,
-      "checkedAt": "2026-11-04T12:08:06.333Z"
+      "latencyMs": 1255,
+      "checkedAt": "2026-11-05T12:19:40.807Z"
     },
     {
       "slug": "primaria-oradea",
       "url": "https://www.oradea.ro",
       "status": 403,
       "verdict": "blocked",
-      "latencyMs": 236,
-      "checkedAt": "2026-11-04T12:08:07.223Z"
+      "latencyMs": 200,
+      "checkedAt": "2026-11-05T12:19:42.062Z"
     },
     {
       "slug": "primaria-timisoara",
       "url": "https://www.primariatm.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 370,
-      "checkedAt": "2026-11-04T12:08:07.460Z"
+      "latencyMs": 312,
+      "checkedAt": "2026-11-05T12:19:42.262Z"
     },
     {
       "slug": "primaria-iasi",
       "url": "https://www.primaria-iasi.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 3075,
-      "checkedAt": "2026-11-04T12:08:07.768Z"
+      "latencyMs": 7414,
+      "checkedAt": "2026-11-05T12:19:42.574Z"
     },
     {
       "slug": "primaria-brasov",
       "url": "https://www.brasovcity.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 1146,
-      "checkedAt": "2026-11-04T12:08:07.830Z"
+      "latencyMs": 1157,
+      "checkedAt": "2026-11-05T12:19:48.810Z"
     },
     {
       "slug": "primaria-sibiu",
       "url": "https://www.sibiu.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 1165,
-      "checkedAt": "2026-11-04T12:08:08.975Z"
+      "latencyMs": 1178,
+      "checkedAt": "2026-11-05T12:19:49.967Z"
     },
     {
       "slug": "pmb-bucuresti",
       "url": "https://www.pmb.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 987,
-      "checkedAt": "2026-11-04T12:08:10.141Z"
+      "latencyMs": 815,
+      "checkedAt": "2026-11-05T12:19:49.987Z"
     },
     {
       "slug": "primaria-constanta",
       "url": "https://www.primaria-constanta.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 1292,
-      "checkedAt": "2026-11-04T12:08:10.719Z"
+      "latencyMs": 1267,
+      "checkedAt": "2026-11-05T12:19:50.802Z"
     },
     {
       "slug": "primaria-craiova",
       "url": "https://www.primariacraiova.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 1620,
-      "checkedAt": "2026-11-04T12:08:10.843Z"
+      "latencyMs": 1502,
+      "checkedAt": "2026-11-05T12:19:51.146Z"
     },
     {
       "slug": "primaria-galati",
       "url": "https://www.primariagalati.ro",
       "status": 200,
       "verdict": "ok",
-      "latencyMs": 1647,
-      "checkedAt": "2026-11-04T12:08:11.128Z"
+      "latencyMs": 1626,
+      "checkedAt": "2026-11-05T12:19:51.806Z"
     },
     {
       "slug": "ancpi-eterra",
@@ -271,8 +271,8 @@
       "status": 0,
       "verdict": "down",
       "error": "ENOTFOUND",
-      "latencyMs": 27,
-      "checkedAt": "2026-11-04T12:08:12.012Z"
+      "latencyMs": 158,
+      "checkedAt": "2026-11-05T12:19:52.069Z"
     }
   ],
   "history": [
@@ -15059,6 +15059,178 @@
         "ancpi-eterra": [
           0,
           27,
+          "down"
+        ]
+      }
+    },
+    {
+      "date": "2026-11-05",
+      "up": 27,
+      "total": 32,
+      "services": {
+        "ghiseul-ro": [
+          403,
+          141,
+          "blocked"
+        ],
+        "anaf-ro": [
+          200,
+          1011,
+          "ok"
+        ],
+        "legislatie-just-ro": [
+          0,
+          580,
+          "unreachable"
+        ],
+        "onrc-ro": [
+          200,
+          1325,
+          "ok"
+        ],
+        "data-gov-ro": [
+          0,
+          10487,
+          "unreachable"
+        ],
+        "cnpp-ro": [
+          200,
+          1027,
+          "ok"
+        ],
+        "portal-just-ro": [
+          403,
+          185,
+          "blocked"
+        ],
+        "depabd": [
+          200,
+          1052,
+          "ok"
+        ],
+        "edirect-e-guvernare": [
+          200,
+          2701,
+          "ok"
+        ],
+        "cnas-ro": [
+          503,
+          909,
+          "blocked"
+        ],
+        "ancpi-ro": [
+          200,
+          222,
+          "ok"
+        ],
+        "epasapoarte-ro": [
+          0,
+          10486,
+          "unreachable"
+        ],
+        "hub-mai": [
+          200,
+          1393,
+          "ok"
+        ],
+        "mfinante-gov-ro": [
+          200,
+          3176,
+          "ok"
+        ],
+        "econsulat-ro": [
+          200,
+          1200,
+          "ok"
+        ],
+        "anofm-ro": [
+          200,
+          3981,
+          "ok"
+        ],
+        "reges-online": [
+          200,
+          870,
+          "ok"
+        ],
+        "e-licitatie-ro": [
+          200,
+          2092,
+          "ok"
+        ],
+        "drpciv-ro": [
+          200,
+          2034,
+          "ok"
+        ],
+        "insse-ro": [
+          0,
+          253,
+          "unreachable"
+        ],
+        "monitorul-oficial": [
+          200,
+          2376,
+          "ok"
+        ],
+        "apia-org-ro": [
+          0,
+          252,
+          "unreachable"
+        ],
+        "primaria-cluj-napoca": [
+          200,
+          1255,
+          "ok"
+        ],
+        "primaria-oradea": [
+          403,
+          200,
+          "blocked"
+        ],
+        "primaria-timisoara": [
+          200,
+          312,
+          "ok"
+        ],
+        "primaria-iasi": [
+          200,
+          7414,
+          "ok"
+        ],
+        "primaria-brasov": [
+          200,
+          1157,
+          "ok"
+        ],
+        "primaria-sibiu": [
+          200,
+          1178,
+          "ok"
+        ],
+        "pmb-bucuresti": [
+          200,
+          815,
+          "ok"
+        ],
+        "primaria-constanta": [
+          200,
+          1267,
+          "ok"
+        ],
+        "primaria-craiova": [
+          200,
+          1502,
+          "ok"
+        ],
+        "primaria-galati": [
+          200,
+          1626,
+          "ok"
+        ],
+        "ancpi-eterra": [
+          0,
+          158,
           "down"
         ]
       }
